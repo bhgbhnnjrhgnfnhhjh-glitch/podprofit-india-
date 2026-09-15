@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>POD Profit Calculator India – Calculate Real POD Profit | PODProfit India</title>
+  <meta name="description" content="Free POD Profit Calculator India. Calculate Print-on-Demand profit, margin, break-even price, recommended selling price, monthly profit and yearly profit.">
+    <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#111827">
+  <meta name="author" content="PODProfit India">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:site_name" content="PODProfit India">
+  <meta property="og:url" content="https://bhgbhnnjrhgnfnhhjh-glitch.github.io/podprofit-india-/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+
+  <meta property="og:title" content="POD Profit Calculator India | PODProfit India">
+  <meta property="og:description" content="Calculate your real Print-on-Demand profit, margin, break-even price and recommended selling price.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://bhgbhnnjrhgnfnhhjh-glitch.github.io/podprofit-india-/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://bhgbhnnjrhgnfnhhjh-glitch.github.io/podprofit-india-/">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="POD Profit Calculator India | PODProfit India">
+  <meta name="twitter:description" content="Free Print-on-Demand profit and pricing calculator.">
+  <meta name="twitter:image" content="https://bhgbhnnjrhgnfnhhjh-glitch.github.io/podprofit-india-/social-preview.png">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"PODProfit India",
+    "url":"https://bhgbhnnjrhgnfnhhjh-glitch.github.io/podprofit-india-/",
+    "applicationCategory":"BusinessApplication",
+    "operatingSystem":"Any",
+    "description":"Free Print-on-Demand profit calculator for sellers.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},
+    "isAccessibleForFree":true,
+    "inLanguage":"en-IN",
+    "publisher":{"@type":"Organization","name":"PODProfit India","url":"https://bhgbhnnjrhgnfnhhjh-glitch.github.io/podprofit-india-/"}
+  }
+  </script>
+
+  <style>
+    .skip-link{position:absolute;left:-9999px;top:auto;padding:8px 12px;background:#fff;color:#111827;z-index:100;border-radius:6px}
+    .skip-link:focus{left:10px;top:10px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:#f3f4f6;
+      color:#111827;
+      line-height:1.6
+    }
+    a{color:inherit}
+    header{
+      background:#111827;
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:20;
+      box-shadow:0 2px 10px rgba(0,0,0,.15)
+    }
+    .header-inner{
+      max-width:1100px;
+      margin:auto;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap
+    }
+    .brand{
+      font-size:21px;
+      font-weight:800;
+      text-decoration:none
+    }
+    nav{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:center
+    }
+    nav a{
+      text-decoration:none;
+      color:#d1d5db;
+      font-size:13px;
+      padding:7px 9px;
+      border-radius:7px
+    }
+    nav a:hover{background:#374151;color:#fff}
+
+    .hero{
+      background:#111827;
+      color:#fff;
+      padding:42px 16px 48px;
+      text-align:center
+    }
+    .hero-inner{max-width:850px;margin:auto}
+    .hero h1{font-size:clamp(30px,6vw,48px);margin:0 0 10px}
+    .hero p{max-width:700px;margin:0 auto;color:#d1d5db;font-size:17px}
+
+    main{max-width:1100px;margin:auto;padding:22px 14px 50px}
+    .section{margin:28px 0}
+    .section h2{font-size:26px;margin:0 0 16px}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px
+    }
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{
+      background:#fff;
+      border-radius:14px;
+      padding:18px;
+      box-shadow:0 3px 14px rgba(0,0,0,.07)
+    }
+    .card h3{margin:0 0 10px;font-size:18px}
+    .ad{
+      min-height:70px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#6b7280;
+      border:1px dashed #cbd5e1;
+      background:#fff;
+      border-radius:10px;
+      margin:18px 0;
+      font-size:13px
+    }
+
+    label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
+    input,select{
+      width:100%;
+      padding:11px 12px;
+      border:1px solid #d1d5db;
+      border-radius:9px;
+      font-size:15px;
+      background:#fff
+    }
+    .input-wrap{margin-bottom:4px}
+    .buttons{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:15px
+    }
+    button{
+      border:0;
+      border-radius:9px;
+      padding:11px 16px;
+      font-weight:700;
+      cursor:pointer;
+      font-size:14px
+    }
+    .btn-primary{background:#2563eb;color:#fff}
+    .btn-secondary{background:#e5e7eb;color:#111827}
+    .btn-green{background:#16a34a;color:#fff}
+    .btn-purple{background:#7c3aed;color:#fff}
+    .btn-dark{background:#111827;color:#fff}
+
+    .result-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px
+    }
+    .metric{
+      background:#fff;
+      border-radius:12px;
+      padding:15px;
+      box-shadow:0 2px 10px rgba(0,0,0,.06)
+    }
+    .metric small{display:block;color:#6b7280;margin-bottom:5px}
+    .metric strong{font-size:22px}
+    .profit-positive{color:#15803d}
+    .profit-negative{color:#b91c1c}
+    .health-card{border-left:5px solid #f59e0b;background:#fffbeb}
+    .health-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;font-weight:800;font-size:14px;margin-bottom:8px}
+    .health-loss{background:#fee2e2;color:#991b1b}
+    .health-low{background:#ffedd5;color:#9a3412}
+    .health-good{background:#dcfce7;color:#166534}
+    .health-strong{background:#dbeafe;color:#1e40af}
+    .health-neutral{background:#e5e7eb;color:#374151}
+    .health-note{margin:4px 0 0;color:#4b5563;font-size:14px}
+
+    .table-wrap{overflow-x:auto}
+    table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
+    th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;white-space:nowrap}
+    th{background:#f9fafb;font-size:13px}
+    td{font-size:14px}
+    .best-row{font-weight:700;background:#f0fdf4}
+
+    .progress{
+      height:18px;
+      background:#e5e7eb;
+      border-radius:999px;
+      overflow:hidden;
+      margin:10px 0
+    }
+    .progress-bar{
+      height:100%;
+      width:0%;
+      background:#2563eb;
+      transition:width .3s
+    }
+    .formula-box{
+      background:#f5f7fa;
+      border-left:4px solid #2563eb;
+      padding:14px;
+      margin:12px 0;
+      border-radius:8px;
+      font-weight:700;
+      text-align:center
+    }
+    .tip{
+      border-left:4px solid #16a34a;
+      background:#f0fdf4;
+      padding:12px;
+      border-radius:8px;
+      margin:8px 0
+    }
+    .chart{
+      display:flex;
+      align-items:flex-end;
+      gap:10px;
+      min-height:210px;
+      padding:18px 10px 8px;
+      background:#fff;
+      border-radius:12px
+    }
+    .bar-col{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-end;
+      min-width:35px;
+      height:180px
+    }
+    .bar{
+      width:70%;
+      min-height:3px;
+      background:#2563eb;
+      border-radius:6px 6px 0 0
+    }
+    .bar-label{font-size:11px;margin-top:5px;text-align:center}
+    .bar-value{font-size:10px;margin-bottom:3px;color:#374151}
+
+    footer{
+      background:#111827;
+      color:#d1d5db;
+      padding:30px 16px;
+      text-align:center
+    }
+    footer a{color:#fff;text-decoration:none;margin:0 7px}
+    .muted{color:#6b7280;font-size:13px}
+
+    @media(max-width:800px){
+      .result-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .grid,.grid-3{grid-template-columns:1fr}
+      nav{width:100%}
+      .header-inner{justify-content:center}
+    }
+    @media(max-width:480px){
+      .hero{padding:32px 13px 38px}
+      .result-grid{grid-template-columns:1fr}
+      .card{padding:15px}
+      button{width:100%}
+      .buttons{display:grid}
+    }
+
+    @media print{
+      header,footer,.ad,.buttons{display:none!important}
+      body{background:#fff}
+      .card,.metric,table{box-shadow:none}
+      main{padding:0}
+    }
+  
+/* Step 23 Smart Pricing */
+.pricing-recommend-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.pricing-recommend-card{padding:18px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
+.pricing-recommend-card.featured{border:2px solid #2563eb}
+.pricing-label{font-weight:700;font-size:15px;margin-bottom:10px}
+.pricing-price{font-size:25px;font-weight:800;margin-bottom:8px}
+.pricing-recommend-card p{font-size:13px;line-height:1.5;margin:0;color:#555}
+.pricing-explanation{margin-top:16px;padding:15px;border-radius:12px;background:#f7f8fa;line-height:1.6}
+@media(max-width:800px){.pricing-recommend-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.pricing-recommend-grid{grid-template-columns:1fr}}
+
+
+/* Step 24 Profit Goal Planner */
+.goal-planner-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-end;flex-wrap:wrap}
+.goal-planner-input{max-width:260px}
+.goal-planner-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.goal-sim-card{padding:16px;border:1px solid #e5e7eb;border-radius:14px;background:#fff}
+.goal-sim-card h3{margin:0 0 8px;font-size:15px}
+.goal-sim-value{font-size:23px;font-weight:800}
+.goal-planner-table{margin-top:18px}
+.goal-planner-note{margin-top:14px;padding:14px;border-radius:12px;background:#f7f8fa;line-height:1.6}
+@media(max-width:700px){.goal-planner-summary{grid-template-columns:1fr}}
+
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#main-content">Skip to calculator</a>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="#calculator">PODProfit India</a>
+    <nav>
+      <a href="#calculator">Calculator</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#comparison">Comparison</a>
+      <a href="#goals">Goals</a>
+      <a href="#goal-planner">Goal Planner</a>
+      <a href="#tips">Tips</a><a href="#smart-pricing">Smart Pricing</a>
+      <a href="#pod-guide">POD Guide</a>
+      <a href="#how">How It Works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Calculate Your Real POD Profit</h1>
+    <p>
+      Free Print-on-Demand profit calculator for sellers. Estimate profit,
+      margin, break-even price, recommended selling price, monthly income
+      and yearly business results.
+    </p>
+  </div>
+</section>
+
+<main id="main-content">
+  <div class="ad">Advertisement</div>
+
+  <section class="section" id="calculator">
+    <h2>POD Profit Calculator</h2>
+    <div class="card">
+      <div class="grid">
+        <div class="input-wrap">
+          <label for="currency">Currency</label>
+          <select id="currency">
+            <option value="₹">₹ INR</option>
+            <option value="$">$ USD</option>
+            <option value="€">€ EUR</option>
+            <option value="£">£ GBP</option>
+          </select>
+        </div>
+
+        <div class="input-wrap">
+          <label for="product">Product Type</label>
+          <select id="product">
+            <option value="T-Shirt">T-Shirt</option>
+            <option value="Hoodie">Hoodie</option>
+            <option value="Mug">Mug</option>
+            <option value="Cap">Cap</option>
+            <option value="Sticker">Sticker</option>
+          </select>
+        </div>
+
+        <div class="input-wrap">
+          <label for="platform">Marketplace / Selling Platform</label>
+          <select id="platform">
+            <option value="Custom">Custom</option>
+            <option value="Etsy">Etsy - Estimated</option>
+            <option value="Shopify">Shopify / Own Store - Estimated</option>
+            <option value="Amazon">Amazon - Estimated</option>
+            <option value="Other">Other Platform</option>
+          </select>
+        </div>
+
+        <div class="input-wrap">
+          <label for="sellingPrice">Selling Price</label>
+          <input id="sellingPrice" type="number" min="0" value="599">
+        </div>
+
+        <div class="input-wrap">
+          <label for="productCost">Product Cost</label>
+          <input id="productCost" type="number" min="0" value="250">
+        </div>
+
+        <div class="input-wrap">
+          <label for="shippingCost">Shipping Cost</label>
+          <input id="shippingCost" type="number" min="0" value="60">
+        </div>
+
+        <div class="input-wrap">
+          <label for="platformFee">Platform Fee %</label>
+          <input id="platformFee" type="number" min="0" value="10" step="0.1">
+        </div>
+
+        <div class="input-wrap">
+          <label for="paymentFee">Payment Fee %</label>
+          <input id="paymentFee" type="number" min="0" value="3" step="0.1">
+        </div>
+
+        <div class="input-wrap">
+          <label for="discount">Discount %</label>
+          <input id="discount" type="number" min="0" max="100" value="0" step="0.1">
+        </div>
+
+        <div class="input-wrap">
+          <label for="ads">Advertising Cost / Order</label>
+          <input id="ads" type="number" min="0" value="0">
+        </div>
+
+        <div class="input-wrap">
+          <label for="orders">Monthly Orders</label>
+          <input id="orders" type="number" min="0" value="30">
+        </div>
+
+        <div class="input-wrap">
+          <label for="targetProfit">Target Profit / Order</label>
+          <input id="targetProfit" type="number" min="0" value="300">
+        </div>
+
+        <div class="input-wrap">
+          <label for="targetMargin">Target Profit Margin %</label>
+          <select id="targetMargin">
+            <option value="20">20%</option>
+            <option value="30">30%</option>
+            <option value="40">40%</option>
+            <option value="50">50%</option>
+          </select>
+        </div>
+
+        <div class="input-wrap">
+          <label for="targetIncome">Target Monthly Income</label>
+          <input id="targetIncome" type="number" min="0" value="20000">
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="btn-primary" onclick="calculate()" title="Calculate POD profit">Calculate Profit</button>
+        <button class="btn-secondary" onclick="resetCalculator()">Reset</button>
+        <button class="btn-green" onclick="shareResult()">Share Result</button>
+        <button class="btn-purple" onclick="copyResult()">Copy Result</button>
+        <button class="btn-dark" onclick="window.print()">Print / Save PDF</button>
+      </div>
+      <p class="muted">Platform fees are estimates. Enter your actual rates for more accurate results.</p>
+    </div>
+  </section>
+
+  <section class="section" id="results">
+    <h2>Profit Results</h2>
+    <div class="result-grid">
+      <div class="metric"><small>Product</small><strong id="rProduct">-</strong></div>
+      <div class="metric"><small>Profit / Order</small><strong id="rProfit">-</strong></div>
+      <div class="metric"><small>Profit Margin</small><strong id="rMargin">-</strong></div>
+      <div class="metric"><small>Total Cost / Order</small><strong id="rCost">-</strong></div>
+      <div class="metric"><small>Monthly Sales</small><strong id="rSales">-</strong></div>
+      <div class="metric"><small>Monthly Profit</small><strong id="rMonthlyProfit">-</strong></div>
+      <div class="metric"><small>Break-even Price</small><strong id="rBreakEven">-</strong></div>
+      <div class="metric"><small>Price for Target Profit</small><strong id="rTargetPrice">-</strong></div>
+      <div class="metric"><small>Recommended Selling Price</small><strong id="rRecommended">-</strong></div>
+      <div class="metric"><small>Expected Profit at Recommended</small><strong id="rRecommendedProfit">-</strong></div>
+      <div class="metric"><small>Recommended Margin</small><strong id="rRecommendedMargin">-</strong></div>
+      <div class="metric"><small>Orders Needed</small><strong id="rOrdersNeeded">-</strong></div>
+    </div>
+    <div class="card health-card" style="margin-top:14px">
+      <div id="profitHealthBadge" class="health-badge health-neutral">⏳ Profit Health</div>
+      <p id="profitHealthText" class="health-note">Calculate your result to see the profit health status.</p>
+    </div>
+  </section>
+
+  <section class="section" id="dashboard">
+    <h2>POD Seller Dashboard</h2>
+    <div class="result-grid">
+      <div class="metric"><small>Total Sales</small><strong id="dashboardSales">-</strong></div>
+      <div class="metric"><small>Total Profit</small><strong id="dashboardProfit">-</strong></div>
+      <div class="metric"><small>Total Orders</small><strong id="dashboardOrders">-</strong></div>
+      <div class="metric"><small>Best Product</small><strong id="dashboardBestProduct">-</strong></div>
+      <div class="metric"><small>Best Price</small><strong id="dashboardBestPrice">-</strong></div>
+      <div class="metric"><small>Goal Progress</small><strong id="dashboardGoal">-</strong></div>
+      <div class="metric"><small>Profit Health</small><strong id="dashboardHealth">-</strong></div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <p id="dashboardMessage">Calculate your profit to update the dashboard.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Business Summary</h2>
+    <div class="result-grid">
+      <div class="metric"><small>Daily Revenue</small><strong id="dailyRevenue">-</strong></div>
+      <div class="metric"><small>Daily Profit</small><strong id="dailyProfit">-</strong></div>
+      <div class="metric"><small>Monthly Revenue</small><strong id="monthlyRevenue">-</strong></div>
+      <div class="metric"><small>Monthly Net Profit</small><strong id="monthlyNetProfit">-</strong></div>
+      <div class="metric"><small>Yearly Revenue</small><strong id="yearlyRevenue">-</strong></div>
+      <div class="metric"><small>Yearly Net Profit</small><strong id="yearlyNetProfit">-</strong></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Monthly Expense Breakdown</h2>
+    <div class="result-grid">
+      <div class="metric"><small>Product Cost</small><strong id="expProduct">-</strong></div>
+      <div class="metric"><small>Shipping</small><strong id="expShipping">-</strong></div>
+      <div class="metric"><small>Platform Fees</small><strong id="expPlatform">-</strong></div>
+      <div class="metric"><small>Payment Fees</small><strong id="expPayment">-</strong></div>
+      <div class="metric"><small>Advertising</small><strong id="expAds">-</strong></div>
+      <div class="metric"><small>Total Expenses</small><strong id="expTotal">-</strong></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Yearly Business Forecast</h2>
+    <div class="result-grid">
+      <div class="metric"><small>Estimated Annual Orders</small><strong id="annualOrders">-</strong></div>
+      <div class="metric"><small>Annual Revenue</small><strong id="annualRevenue">-</strong></div>
+      <div class="metric"><small>Annual Expenses</small><strong id="annualExpenses">-</strong></div>
+      <div class="metric"><small>Annual Net Profit</small><strong id="annualProfit">-</strong></div>
+    </div>
+  </section>
+
+  <section class="section" id="goals">
+    <h2>Monthly Profit Goal</h2>
+    <div class="card">
+      <div class="result-grid">
+        <div class="metric"><small>Target</small><strong id="goalTarget">-</strong></div>
+        <div class="metric"><small>Current Monthly Profit</small><strong id="goalCurrent">-</strong></div>
+        <div class="metric"><small>Remaining</small><strong id="goalRemaining">-</strong></div>
+        <div class="metric"><small>Extra Orders Needed</small><strong id="goalExtraOrders">-</strong></div>
+      </div>
+      <div class="progress"><div class="progress-bar" id="goalBar"></div></div>
+      <p id="goalText">-</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Yearly Profit Goal</h2>
+    <div class="card">
+      <div class="result-grid">
+        <div class="metric"><small>Yearly Target</small><strong id="yearlyGoalTarget">-</strong></div>
+        <div class="metric"><small>Estimated Yearly Profit</small><strong id="yearlyGoalProfit">-</strong></div>
+        <div class="metric"><small>Goal Progress</small><strong id="yearlyGoalProgress">-</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="comparison">
+    <h2>Custom Price Comparison</h2>
+    <div class="card">
+      <div class="grid">
+        <div><label>Price 1</label><input class="comparePrice" type="number" value="399"></div>
+        <div><label>Price 2</label><input class="comparePrice" type="number" value="499"></div>
+        <div><label>Price 3</label><input class="comparePrice" type="number" value="599"></div>
+        <div><label>Price 4</label><input class="comparePrice" type="number" value="699"></div>
+        <div><label>Price 5</label><input class="comparePrice" type="number" value="799"></div>
+      </div>
+      <p><strong>Best Comparison Price:</strong> <span id="bestComparePrice">-</span></p>
+      <p><strong>Best Comparison Profit:</strong> <span id="bestCompareProfit">-</span></p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Price</th><th>Profit</th><th>Margin</th><th>Status</th></tr></thead>
+          <tbody id="comparisonBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Product Profit Comparison</h2>
+    <div class="card">
+      <p class="muted">Edit product costs below if your actual costs are different.</p>
+      <div class="grid">
+        <div><label>T-Shirt Cost</label><input class="productCostInput" data-product="T-Shirt" type="number" value="250"></div>
+        <div><label>Hoodie Cost</label><input class="productCostInput" data-product="Hoodie" type="number" value="450"></div>
+        <div><label>Mug Cost</label><input class="productCostInput" data-product="Mug" type="number" value="180"></div>
+        <div><label>Cap Cost</label><input class="productCostInput" data-product="Cap" type="number" value="220"></div>
+        <div><label>Sticker Cost</label><input class="productCostInput" data-product="Sticker" type="number" value="50"></div>
+      </div>
+      <div class="buttons">
+        <button class="btn-primary" onclick="calculate()">Update Comparison</button>
+        <button class="btn-secondary" onclick="saveProductCosts()">Save Product Costs</button>
+      </div>
+      <div class="table-wrap" style="margin-top:14px">
+        <table>
+          <thead><tr><th>Product</th><th>Product Cost</th><th>Profit</th><th>Margin</th><th>Status</th></tr></thead>
+          <tbody id="productComparisonBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Profit Chart</h2>
+    <div class="chart" id="profitChart"></div>
+  </section>
+
+  <section class="section">
+    <h2>Revenue vs Profit</h2>
+    <div class="chart" id="revenueChart"></div>
+  </section>
+
+
+  <section class="section" id="goal-planner">
+    <div class="goal-planner-head">
+      <div>
+        <h2>Profit Goal Planner</h2>
+        <p>Test different selling prices and see how many orders you may need to reach your monthly profit goal. This goal stays synced with the calculator’s Target Monthly Income.</p>
+      </div>
+      <div class="goal-planner-input">
+        <label for="plannerTargetIncome">Monthly Profit Goal</label>
+        <input id="plannerTargetIncome" type="number" min="0" step="0.01" value="20000" readonly>
+      </div>
+    </div>
+
+    <div class="goal-planner-summary">
+      <div class="goal-sim-card"><h3>Current Selling Price</h3><div class="goal-sim-value" id="plannerCurrentPrice">—</div></div>
+      <div class="goal-sim-card"><h3>Profit / Order</h3><div class="goal-sim-value" id="plannerCurrentProfit">—</div></div>
+      <div class="goal-sim-card"><h3>Orders Needed</h3><div class="goal-sim-value" id="plannerCurrentOrders">—</div></div>
+    </div>
+
+    <div class="grid" style="margin-top:18px">
+      <div><label for="plannerPrice1">Test Price 1</label><input class="plannerPrice" id="plannerPrice1" type="number" min="0" step="0.01" value="499"></div>
+      <div><label for="plannerPrice2">Test Price 2</label><input class="plannerPrice" id="plannerPrice2" type="number" min="0" step="0.01" value="599"></div>
+      <div><label for="plannerPrice3">Test Price 3</label><input class="plannerPrice" id="plannerPrice3" type="number" min="0" step="0.01" value="699"></div>
+      <div><label for="plannerPrice4">Test Price 4</label><input class="plannerPrice" id="plannerPrice4" type="number" min="0" step="0.01" value="799"></div>
+      <div><label for="plannerPrice5">Test Price 5</label><input class="plannerPrice" id="plannerPrice5" type="number" min="0" step="0.01" value="899"></div>
+    </div>
+
+    <div class="table-wrap goal-planner-table">
+      <table>
+        <thead><tr><th>Test Price</th><th>Profit / Order</th><th>Margin</th><th>Monthly Profit*</th><th>Orders to Goal</th><th>Goal Gap*</th></tr></thead>
+        <tbody id="goalPlannerBody"></tbody>
+      </table>
+    </div>
+    <div class="goal-planner-note" id="goalPlannerNote">* Monthly profit uses the current Monthly Orders value from the calculator. Orders to Goal shows the estimated orders required to reach the selected monthly profit goal at that price.</div>
+  </section>
+
+  <section class="section" id="smart-pricing">
+    <h2>Smart Pricing Recommendation</h2>
+    <p>Compare four pricing strategies using your current costs, fees, target profit and target margin.</p>
+    <div class="pricing-recommend-grid">
+      <div class="pricing-recommend-card">
+        <div class="pricing-label">🟢 Minimum Safe Price</div>
+        <div class="pricing-price" id="safePrice">-</div>
+        <p>Estimated break-even price plus a 10% safety buffer.</p>
+      </div>
+      <div class="pricing-recommend-card featured">
+        <div class="pricing-label">🔵 Recommended Price</div>
+        <div class="pricing-price" id="smartRecommendedPrice">-</div>
+        <p>Price needed for your selected target margin.</p>
+      </div>
+      <div class="pricing-recommend-card">
+        <div class="pricing-label">⭐ Target Profit Price</div>
+        <div class="pricing-price" id="smartTargetPrice">-</div>
+        <p>Price needed to reach your target profit per order.</p>
+      </div>
+      <div class="pricing-recommend-card">
+        <div class="pricing-label">💎 Higher Profit Price</div>
+        <div class="pricing-price" id="higherProfitPrice">-</div>
+        <p>A higher test price set 25% above the target-profit price.</p>
+      </div>
+    </div>
+    <div class="pricing-explanation" id="pricingExplanation">
+      Calculate your profit to see smart pricing recommendations.
+    </div>
+  </section>
+
+  <section class="section" id="tips">
+    <h2>Smart Pricing Tips</h2>
+    <div class="tip">Know your complete cost per order before choosing a selling price.</div>
+    <div class="tip">Check break-even price before running discounts or ads.</div>
+    <div class="tip">Compare several prices instead of choosing a price randomly.</div>
+    <div class="tip">Review platform and payment fees regularly because rates can change.</div>
+    <div class="tip">Use your actual product and shipping costs for a better estimate.</div>
+  </section>
+
+  <section class="section" id="pod-guide">
+    <h2>Complete POD Profit Calculator Guide</h2>
+
+    <div class="card">
+      <h3>What is a POD Profit Calculator?</h3>
+      <p>
+        A POD Profit Calculator helps Print-on-Demand sellers estimate their
+        profit from each order. You can enter your selling price, product cost,
+        shipping cost, platform fees, payment fees, discount and advertising
+        cost to estimate your real profit.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>How to Calculate POD Profit</h3>
+      <p>
+        To calculate POD profit, first add your product cost, shipping,
+        platform fees, payment fees and advertising cost. Then subtract the
+        total expenses from the amount you receive after discounts and fees.
+      </p>
+      <p><strong>Basic formula:</strong></p>
+      <div class="formula-box">Profit = Net Selling Revenue − Total Order Cost</div>
+      <p>
+        Your actual profit can change depending on your product cost,
+        marketplace fees, payment fees, discounts, shipping and advertising
+        expenses.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>POD Profit Margin</h3>
+      <p>
+        Profit margin shows how much of your net selling revenue remains as
+        profit after product, shipping and advertising costs are deducted.
+        Net selling revenue is the amount left after discounts and platform/payment fees.
+      </p>
+      <div class="formula-box">Profit Margin = Profit ÷ Net Selling Revenue × 100</div>
+    </div>
+
+    <div class="card">
+      <h3>How to Choose a POD Selling Price</h3>
+      <p>
+        A good POD selling price should cover your product cost, shipping,
+        marketplace fees, payment fees, discounts and advertising expenses
+        while leaving enough profit for your business.
+      </p>
+      <ul>
+        <li>Calculate your complete cost per order.</li>
+        <li>Check your break-even price.</li>
+        <li>Set a target profit per order.</li>
+        <li>Check your desired profit margin.</li>
+        <li>Compare different selling prices.</li>
+        <li>Review your monthly profit goal.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>POD Profit Calculator for Indian Sellers</h3>
+      <p>
+        POD sellers in India can use PODProfit India to estimate profit for
+        products such as T-shirts, hoodies, mugs, caps and stickers.
+        Enter your own product and shipping costs for a more useful estimate.
+      </p>
+      <p>
+        The calculator also lets you compare selling prices, estimate monthly
+        and yearly profit, calculate break-even price and check how many orders
+        may be needed to reach a monthly income target.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Why Calculate POD Profit Before Selling?</h3>
+      <p>
+        A product can have good sales but still produce low profit if costs and
+        fees are not considered. Calculating your estimated profit before
+        choosing a price can help you understand your costs and make better
+        pricing decisions.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <h2>How It Works</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>1. Enter Costs</h3><p>Enter product, shipping, fees, discount and advertising costs.</p></div>
+      <div class="card"><h3>2. Calculate</h3><p>The calculator estimates your profit, margin and break-even price.</p></div>
+      <div class="card"><h3>3. Plan</h3><p>Compare prices and check monthly and yearly income goals.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="card">
+      <h3>Is PODProfit India free?</h3>
+      <p>Yes. The calculator is designed as a free browser-based tool.</p>
+    </div>
+    <div class="card">
+      <h3>Does it calculate exact marketplace fees?</h3>
+      <p>No. Platform presets are estimates. Enter your actual fee percentages for a more accurate calculation.</p>
+    </div>
+    <div class="card">
+      <h3>Can I use it for different POD products?</h3>
+      <p>Yes. The calculator includes T-shirts, hoodies, mugs, caps and stickers, and you can edit product costs.</p>
+    </div>
+    <div class="card">
+      <h3>Does the currency selector convert currencies?</h3>
+      <p>No. It changes the displayed currency symbol only. It does not perform exchange-rate conversion.</p>
+    </div>
+    <div class="card">
+      <h3>Can I save my calculation?</h3>
+      <p>Yes. Use Save Calculation below. Saved calculation data stays in your browser's local storage.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Save Your Work</h2>
+    <div class="card">
+      <div class="buttons">
+        <button class="btn-primary" onclick="saveCalculation()">Save Calculation</button>
+        <button class="btn-secondary" onclick="loadCalculation()">Load Calculation</button>
+        <button class="btn-secondary" onclick="clearSaved()">Clear Saved Data</button>
+      </div>
+      <p id="saveMessage" class="muted"></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>About PODProfit India</h2>
+    <div class="card">
+      <p>
+        PODProfit India is a free online calculator designed to help
+        Print-on-Demand sellers estimate order profit, profit margin,
+        break-even price, recommended pricing, monthly profit and yearly
+        business results.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Privacy Policy</h2>
+    <div class="card">
+      <p>
+        Calculator values saved with the Save Calculation feature are stored
+        in your browser's local storage. They are not sent to our server by
+        this calculator. If third-party advertising or analytics services are
+        added in the future, this privacy information should be updated.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Disclaimer</h2>
+    <div class="card">
+      <p>
+        PODProfit India provides estimates for planning purposes only.
+        Results are not financial, tax, accounting or legal advice. Actual
+        marketplace fees, payment fees, shipping charges, taxes, refunds,
+        returns and other business costs may differ.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Website Information</h2>
+    <div class="card">
+      <p><strong>Free browser-based calculator:</strong> No account or login is required to calculate POD estimates.</p>
+      <p><strong>Data storage:</strong> Saved calculations use your browser's local storage. The calculator itself does not send saved values to a server.</p>
+      <p><strong>Last updated:</strong> September 2026</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>For questions, feedback or suggestions about PODProfit India, use the contact method published with this website.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><strong>PODProfit India</strong> — Calculate Your Real POD Profit</p>
+  <p>
+    <a href="#calculator">Calculator</a>
+    <a href="#pod-guide">POD Guide</a>
+    <a href="#faq">FAQ</a>
+    <a href="#how">How It Works</a>
+  </p>
+  <p class="muted">© <span id="year"></span> PODProfit India. All rights reserved.</p>
+</footer>
+
+<script>
+const defaultCosts = {
+  "T-Shirt":250,
+  "Hoodie":450,
+  "Mug":180,
+  "Cap":220,
+  "Sticker":50
+};
+
+const platformFees = {
+  "Custom":10,
+  "Etsy":10,
+  "Shopify":3,
+  "Amazon":15,
+  "Other":10
+};
+
+const $ = id => document.getElementById(id);
+
+function num(id){
+  const v = parseFloat($(id).value);
+  return Number.isFinite(v) ? Math.max(0,v) : 0;
+}
+
+function money(v){
+  const symbol = $("currency").value;
+  return symbol + Number(v || 0).toLocaleString("en-IN",{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  });
+}
+
+function percent(v){
+  return Number(v || 0).toFixed(2) + "%";
+}
+
+function getProductCosts(){
+  const costs = {};
+  document.querySelectorAll(".productCostInput").forEach(input=>{
+    costs[input.dataset.product] = Math.max(0,parseFloat(input.value)||0);
+  });
+  return costs;
+}
+
+function calculateForPrice(price, cost){
+  const discountRate = Math.min(100,num("discount"))/100;
+  const platformRate = num("platformFee")/100;
+  const paymentRate = num("paymentFee")/100;
+  const shipping = num("shippingCost");
+  const ads = num("ads");
+
+  const afterDiscount = price * (1-discountRate);
+  const platformCost = afterDiscount * platformRate;
+  const paymentCost = afterDiscount * paymentRate;
+  const totalCost = cost + shipping + platformCost + paymentCost + ads;
+  const netSellingRevenue = afterDiscount - platformCost - paymentCost;
+  const profit = netSellingRevenue - (cost + shipping + ads);
+  const margin = netSellingRevenue > 0 ? profit/netSellingRevenue*100 : 0;
+
+  return {afterDiscount,platformCost,paymentCost,totalCost,netSellingRevenue,profit,margin};
+}
+
+function getProfitHealth(profit, margin){
+  const p=Number(profit)||0;
+  const m=Number(margin)||0;
+  if(p < 0) return {label:"🔴 Loss", short:"Loss", cls:"health-loss", note:"This price is below your estimated costs. Consider increasing the selling price or reducing costs."};
+  if(p === 0) return {label:"⚪ Break-even", short:"Break-even", cls:"health-neutral", note:"You are covering the estimated costs, but there is no profit per order."};
+  if(m < 10) return {label:"🟠 Low Profit", short:"Low Profit", cls:"health-low", note:"Your estimated profit is positive but the margin is low. Review your price, fees and costs."};
+  if(m >= 30) return {label:"🔵 Strong Profit", short:"Strong Profit", cls:"health-strong", note:"Your estimated margin is strong. Keep checking real fees, shipping and advertising costs."};
+  return {label:"🟢 Profitable", short:"Profitable", cls:"health-good", note:"Your estimated price is profitable. Review actual marketplace and payment fees before selling."};
+}
+
+function setProfitHealth(profit, margin){
+  const h=getProfitHealth(profit,margin);
+  const badge=$("profitHealthBadge");
+  badge.textContent=h.label;
+  badge.className="health-badge "+h.cls;
+  $("profitHealthText").textContent=h.note;
+  $("dashboardHealth").textContent=h.short;
+  return h;
+}
+
+function calculate(){
+  const product = $("product").value;
+  const price = num("sellingPrice");
+  const cost = num("productCost");
+  const shipping = num("shippingCost");
+  const ads = num("ads");
+  const orders = num("orders");
+  const targetProfit = num("targetProfit");
+  const targetMargin = num("targetMargin");
+  const targetIncome = num("targetIncome");
+  const discountRate = Math.min(100,num("discount"))/100;
+  const platformRate = num("platformFee")/100;
+  const paymentRate = num("paymentFee")/100;
+
+  const r = calculateForPrice(price,cost);
+  const monthlySales = price * orders;
+  const monthlyProfit = r.profit * orders;
+
+  const fixedCost = cost + shipping + ads;
+  const feeRate = platformRate + paymentRate;
+  const contribution = (1-discountRate) * (1-feeRate);
+
+  const breakEven = contribution > 0 ? fixedCost/contribution : 0;
+  const targetPrice = contribution > 0 ? (fixedCost+targetProfit)/contribution : 0;
+
+  const targetMarginRate = Math.min(100,Math.max(0,targetMargin))/100;
+  // Margin is Profit ÷ Net Selling Revenue.
+  // Solve: (netRevenue - fixedCost) / netRevenue = targetMargin.
+  const recommendedDenominator =
+    (1-discountRate) * (1-feeRate) * (1-targetMarginRate);
+  const recommendedPrice =
+    recommendedDenominator > 0 ? fixedCost/recommendedDenominator : 0;
+
+  const recommended = calculateForPrice(recommendedPrice,cost);
+  const ordersNeeded =
+    r.profit > 0 && targetIncome > 0 ? Math.ceil(targetIncome/r.profit) : 0;
+
+  $("rProduct").textContent = product;
+  $("rProfit").textContent = money(r.profit);
+  $("rMargin").textContent = percent(r.margin);
+  $("rCost").textContent = money(r.totalCost);
+  $("rSales").textContent = money(monthlySales);
+  $("rMonthlyProfit").textContent = money(monthlyProfit);
+  $("rBreakEven").textContent = money(breakEven);
+  $("rTargetPrice").textContent = money(targetPrice);
+  $("rRecommended").textContent = money(recommendedPrice);
+  $("rRecommendedProfit").textContent = money(recommended.profit);
+  $("rRecommendedMargin").textContent = percent(recommended.margin);
+  $("rOrdersNeeded").textContent = ordersNeeded ? ordersNeeded : "—";
+
+  $("rProfit").className = r.profit >= 0 ? "profit-positive" : "profit-negative";
+  $("rMonthlyProfit").className = monthlyProfit >= 0 ? "profit-positive" : "profit-negative";
+  const health = setProfitHealth(r.profit,r.margin);
+
+  $("dashboardSales").textContent = money(monthlySales);
+  $("dashboardProfit").textContent = money(monthlyProfit);
+  $("dashboardOrders").textContent = orders;
+  $("dashboardBestProduct").textContent = product;
+  $("dashboardBestPrice").textContent = money(price);
+
+  const goalPct = targetIncome > 0 ? Math.max(0,Math.min(100,monthlyProfit/targetIncome*100)) : 0;
+  $("dashboardGoal").textContent = percent(goalPct);
+  $("dashboardMessage").textContent =
+    health.short === "Loss"
+      ? "⚠️ Current price is estimated to be loss-making. Review pricing or costs."
+      : health.short === "Break-even"
+        ? "You are at estimated break-even. A higher price or lower costs are needed for profit."
+        : health.short === "Low Profit"
+          ? "Your current estimate is profitable, but the margin is low. Review pricing before selling."
+          : "Your current estimate is profitable. Keep checking actual fees and costs.";
+
+  $("dailyRevenue").textContent = money(monthlySales/30);
+  $("dailyProfit").textContent = money(monthlyProfit/30);
+  $("monthlyRevenue").textContent = money(monthlySales);
+  $("monthlyNetProfit").textContent = money(monthlyProfit);
+  $("yearlyRevenue").textContent = money(monthlySales*12);
+  $("yearlyNetProfit").textContent = money(monthlyProfit*12);
+
+  const monthlyProduct = cost*orders;
+  const monthlyShipping = shipping*orders;
+  const monthlyPlatform = r.platformCost*orders;
+  const monthlyPayment = r.paymentCost*orders;
+  const monthlyAds = ads*orders;
+  const totalExpenses = monthlyProduct+monthlyShipping+monthlyPlatform+monthlyPayment+monthlyAds;
+
+  $("expProduct").textContent = money(monthlyProduct);
+  $("expShipping").textContent = money(monthlyShipping);
+  $("expPlatform").textContent = money(monthlyPlatform);
+  $("expPayment").textContent = money(monthlyPayment);
+  $("expAds").textContent = money(monthlyAds);
+  $("expTotal").textContent = money(totalExpenses);
+
+  $("annualOrders").textContent = Math.round(orders*12);
+  $("annualRevenue").textContent = money(monthlySales*12);
+  $("annualExpenses").textContent = money(totalExpenses*12);
+  $("annualProfit").textContent = money(monthlyProfit*12);
+
+  const remaining = Math.max(0,targetIncome-monthlyProfit);
+  const extraOrders = r.profit > 0 ? Math.max(0,Math.ceil(remaining/r.profit)) : 0;
+  $("goalTarget").textContent = money(targetIncome);
+  $("goalCurrent").textContent = money(monthlyProfit);
+  $("goalRemaining").textContent = money(remaining);
+  $("goalExtraOrders").textContent = extraOrders;
+  $("goalBar").style.width = goalPct + "%";
+  $("goalText").textContent =
+    goalPct >= 100
+      ? "Monthly profit goal reached based on this estimate."
+      : "Progress toward your monthly profit goal: " + percent(goalPct);
+
+  const yearlyTarget = targetIncome*12;
+  const yearlyProfit = monthlyProfit*12;
+  const yearlyPct = yearlyTarget > 0 ? Math.max(0,Math.min(100,yearlyProfit/yearlyTarget*100)) : 0;
+  $("yearlyGoalTarget").textContent = money(yearlyTarget);
+  $("yearlyGoalProfit").textContent = money(yearlyProfit);
+  $("yearlyGoalProgress").textContent = percent(yearlyPct);
+
+  updateComparison(costsOrDefaults());
+  updateProductComparison();
+  updateCharts();
+  updateGoalPlanner();
+}
+
+function costsOrDefaults(){
+  const costs = getProductCosts();
+  Object.keys(defaultCosts).forEach(p=>{
+    if(!Number.isFinite(costs[p])) costs[p]=defaultCosts[p];
+  });
+  return costs;
+}
+
+function updateComparison(){
+  const prices = [...document.querySelectorAll(".comparePrice")]
+    .map(x=>Math.max(0,parseFloat(x.value)||0));
+
+  const cost = num("productCost");
+  const rows = prices.map(price=>({price,...calculateForPrice(price,cost)}));
+  const best = rows.length ? rows.reduce((a,b)=>b.profit>a.profit?b:a,rows[0]) : null;
+
+  $("bestComparePrice").textContent = best ? money(best.price) : "—";
+  $("bestCompareProfit").textContent = best ? money(best.profit) : "—";
+
+  $("comparisonBody").innerHTML = rows.map(x=>{
+    const isBest = best && x.price === best.price && x.profit === best.profit;
+    const health = getProfitHealth(x.profit,x.margin);
+    const status = isBest ? "⭐ Best • "+health.short : health.short;
+    return `<tr class="${isBest?'best-row':''}">
+      <td>${money(x.price)}</td>
+      <td class="${x.profit>=0?'profit-positive':'profit-negative'}">${money(x.profit)}</td>
+      <td class="${x.margin>=0?'':'profit-negative'}">${percent(x.margin)}</td>
+      <td>${status}</td>
+    </tr>`;
+  }).join("");
+}
+
+function updateProductComparison(){
+  const currentPrice = num("sellingPrice");
+  const costs = getProductCosts();
+  const products = Object.keys(defaultCosts);
+
+  $("productComparisonBody").innerHTML = products.map(product=>{
+    const cost = Number.isFinite(costs[product]) ? costs[product] : defaultCosts[product];
+    const r = calculateForPrice(currentPrice,cost);
+    const health = getProfitHealth(r.profit,r.margin);
+    return `<tr>
+      <td>${product}</td>
+      <td>${money(cost)}</td>
+      <td class="${r.profit>=0?'profit-positive':'profit-negative'}">${money(r.profit)}</td>
+      <td>${percent(r.margin)}</td>
+      <td>${health.short}</td>
+    </tr>`;
+  }).join("");
+}
+
+function updateCharts(){
+  const prices = [...document.querySelectorAll(".comparePrice")]
+    .map(x=>Math.max(0,parseFloat(x.value)||0));
+  const cost = num("productCost");
+  const data = prices.map(p=>({label:p, value:calculateForPrice(p,cost).profit}));
+  renderBars("profitChart",data,true);
+
+  const revenueData = [
+    {label:"Daily Revenue",value:num("sellingPrice")*num("orders")/30},
+    {label:"Daily Profit",value:calculateForPrice(num("sellingPrice"),cost).profit*num("orders")/30},
+    {label:"Monthly Revenue",value:num("sellingPrice")*num("orders")},
+    {label:"Monthly Profit",value:calculateForPrice(num("sellingPrice"),cost).profit*num("orders")}
+  ];
+  renderBars("revenueChart",revenueData,false);
+}
+
+function renderBars(id,data,priceMode){
+  const box=$(id);
+  const max=Math.max(...data.map(x=>Math.abs(x.value)),1);
+  box.innerHTML=data.map(x=>{
+    const h=Math.max(3,Math.round(Math.abs(x.value)/max*150));
+    const label=priceMode ? money(x.label) : x.label;
+    return `<div class="bar-col">
+      <div class="bar-value">${money(x.value)}</div>
+      <div class="bar" style="height:${h}px"></div>
+      <div class="bar-label">${label}</div>
+    </div>`;
+  }).join("");
+}
+
+function resetCalculator(){
+  $("currency").value="₹";
+  $("product").value="T-Shirt";
+  $("platform").value="Custom";
+  $("sellingPrice").value=599;
+  $("productCost").value=250;
+  $("shippingCost").value=60;
+  $("platformFee").value=10;
+  $("paymentFee").value=3;
+  $("discount").value=0;
+  $("ads").value=0;
+  $("orders").value=30;
+  $("targetProfit").value=300;
+  $("targetMargin").value=20;
+  $("targetIncome").value=20000;
+
+  document.querySelectorAll(".comparePrice").forEach((x,i)=>{
+    x.value=[399,499,599,699,799][i];
+  });
+  document.querySelectorAll(".plannerPrice").forEach((x,i)=>{
+    x.value=[499,599,699,799,899][i];
+  });
+  $("plannerTargetIncome").value=20000;
+
+  loadDefaultProductInputs();
+  calculate();
+  $("saveMessage").textContent="Calculator reset.";
+}
+
+function loadDefaultProductInputs(){
+  document.querySelectorAll(".productCostInput").forEach(input=>{
+    input.value=defaultCosts[input.dataset.product];
+  });
+}
+
+$("product").addEventListener("change",()=>{
+  $("productCost").value = defaultCosts[$("product").value] || 0;
+  calculate();
+});
+
+$("platform").addEventListener("change",()=>{
+  $("platformFee").value = platformFees[$("platform").value] ?? 10;
+  calculate();
+});
+
+document.querySelectorAll("input,select").forEach(el=>{
+  el.addEventListener("input",calculate);
+  el.addEventListener("change",calculate);
+});
+
+function getState(){
+  return {
+    currency:$("currency").value,
+    product:$("product").value,
+    platform:$("platform").value,
+    sellingPrice:$("sellingPrice").value,
+    productCost:$("productCost").value,
+    shippingCost:$("shippingCost").value,
+    platformFee:$("platformFee").value,
+    paymentFee:$("paymentFee").value,
+    discount:$("discount").value,
+    ads:$("ads").value,
+    orders:$("orders").value,
+    targetProfit:$("targetProfit").value,
+    targetMargin:$("targetMargin").value,
+    targetIncome:$("targetIncome").value,
+    plannerTargetIncome:$("plannerTargetIncome").value,
+    plannerPrices:[...document.querySelectorAll(".plannerPrice")].map(x=>x.value),
+    comparePrices:[...document.querySelectorAll(".comparePrice")].map(x=>x.value)
+  };
+}
+
+function saveCalculation(){
+  localStorage.setItem("podprofitCalculation",JSON.stringify(getState()));
+  localStorage.setItem("podprofitProductCosts",JSON.stringify(getProductCosts()));
+  $("saveMessage").textContent="Calculation saved in this browser.";
+}
+
+function loadCalculation(){
+  const raw=localStorage.getItem("podprofitCalculation");
+  const costs=localStorage.getItem("podprofitProductCosts");
+
+  if(!raw){
+    $("saveMessage").textContent="No saved calculation found.";
+    return;
+  }
+
+  const s=JSON.parse(raw);
+  Object.keys(s).forEach(k=>{
+    if(k==="comparePrices" || k==="plannerPrices") return;
+    if($(k)) $(k).value=s[k];
+  });
+
+  if(Array.isArray(s.comparePrices)){
+    document.querySelectorAll(".comparePrice").forEach((x,i)=>{
+      if(s.comparePrices[i] !== undefined) x.value=s.comparePrices[i];
+    });
+  }
+
+  if(Array.isArray(s.plannerPrices)){
+    document.querySelectorAll(".plannerPrice").forEach((x,i)=>{
+      if(s.plannerPrices[i] !== undefined) x.value=s.plannerPrices[i];
+    });
+  }
+
+  if(costs){
+    const c=JSON.parse(costs);
+    document.querySelectorAll(".productCostInput").forEach(input=>{
+      if(c[input.dataset.product] !== undefined){
+        input.value=c[input.dataset.product];
+      }
+    });
+  }
+
+  calculate();
+  $("saveMessage").textContent="Saved calculation loaded.";
+}
+
+function saveProductCosts(){
+  localStorage.setItem("podprofitProductCosts",JSON.stringify(getProductCosts()));
+  $("saveMessage").textContent="Product costs saved.";
+}
+
+function clearSaved(){
+  localStorage.removeItem("podprofitCalculation");
+  localStorage.removeItem("podprofitProductCosts");
+  $("saveMessage").textContent="Saved data cleared from this browser.";
+}
+
+
+function updateGoalPlanner(){
+  const prices=[...document.querySelectorAll(".plannerPrice")]
+    .map(x=>Math.max(0,parseFloat(x.value)||0));
+  const cost=num("productCost");
+  const orders=num("orders");
+  const goal=Math.max(0,parseFloat($("targetIncome").value)||0);
+  $("plannerTargetIncome").value = goal;
+  const currentPrice=num("sellingPrice");
+  const current=calculateForPrice(currentPrice,cost);
+
+  $("plannerCurrentPrice").textContent=money(currentPrice);
+  $("plannerCurrentProfit").textContent=money(current.profit);
+  $("plannerCurrentOrders").textContent=goal>0 && current.profit>0 ? Math.ceil(goal/current.profit) : "—";
+
+  const rows=prices.map(price=>{
+    const r=calculateForPrice(price,cost);
+    const monthlyProfit=r.profit*orders;
+    const needed=goal>0 && r.profit>0 ? Math.ceil(goal/r.profit) : 0;
+    const gap=Math.max(0,goal-monthlyProfit);
+    const health=getProfitHealth(r.profit,r.margin);
+    return {price,r,monthlyProfit,needed,gap,health};
+  });
+
+  const best=rows.length ? rows.reduce((a,b)=>b.r.profit>a.r.profit?b:a,rows[0]) : null;
+  $("goalPlannerBody").innerHTML=rows.map(x=>{
+    const isBest=best && x.price===best.price && x.r.profit===best.r.profit;
+    return `<tr class="${isBest?'best-row':''}">
+      <td>${money(x.price)}${isBest?' ⭐':''}</td>
+      <td class="${x.r.profit>=0?'profit-positive':'profit-negative'}">${money(x.r.profit)}</td>
+      <td>${percent(x.r.margin)}</td>
+      <td class="${x.monthlyProfit>=0?'profit-positive':'profit-negative'}">${money(x.monthlyProfit)}</td>
+      <td>${x.needed ? x.needed : "—"}</td>
+      <td>${goal>0 ? money(x.gap) : "—"}</td>
+    </tr>`;
+  }).join("");
+
+  $("goalPlannerNote").innerHTML=goal>0
+    ? `<strong>💡 How to use:</strong> Compare the prices above. Lower prices may require more orders to reach your goal, while higher prices may increase profit per order. The ⭐ marks the highest estimated profit per order among the test prices. Monthly profit assumes the current ${orders} monthly orders.`
+    : `Set a monthly profit goal above to calculate the estimated orders needed and goal gap.`;
+}
+
+function resultText(){
+  return [
+    "PODProfit India - POD Profit Result",
+    "Product: "+$("product").value,
+    "Selling Price: "+money(num("sellingPrice")),
+    "Profit Health: "+$("dashboardHealth").textContent,
+    "Profit / Order: "+$("rProfit").textContent,
+    "Profit Margin: "+$("rMargin").textContent,
+    "Total Cost / Order: "+$("rCost").textContent,
+    "Monthly Sales: "+$("rSales").textContent,
+    "Monthly Profit: "+$("rMonthlyProfit").textContent,
+    "Break-even Price: "+$("rBreakEven").textContent,
+    "Recommended Selling Price: "+$("rRecommended").textContent,
+    "Orders Needed: "+$("rOrdersNeeded").textContent
+  ].join("\n");
+}
+
+async function copyResult(){
+  const text=resultText();
+  try{
+    await navigator.clipboard.writeText(text);
+    $("saveMessage").textContent="Result copied.";
+  }catch(e){
+    $("saveMessage").textContent="Copy is not available in this browser.";
+  }
+}
+
+async function shareResult(){
+  const text=resultText();
+  if(navigator.share){
+    try{
+      await navigator.share({title:"PODProfit India Result",text});
+      return;
+    }catch(e){}
+  }
+  await copyResult();
+  $("saveMessage").textContent="Sharing is not available; result copied instead.";
+}
+
+$("year").textContent=new Date().getFullYear();
+
+(function init(){
+  try{
+    const saved=localStorage.getItem("podprofitProductCosts");
+    if(saved){
+      const c=JSON.parse(saved);
+      document.querySelectorAll(".productCostInput").forEach(input=>{
+        if(c[input.dataset.product] !== undefined) input.value=c[input.dataset.product];
+      });
+    }
+  }catch(e){}
+  calculate();
+})();
+</script>
+
+
+<script>
+(function(){
+  function n(id){
+    var e=document.getElementById(id);
+    return e ? parseFloat(e.value)||0 : 0;
+  }
+  function money23(v){
+    var c=(document.getElementById("currency")||{}).value||"₹";
+    return c+Number(v||0).toLocaleString("en-IN",{minimumFractionDigits:2,maximumFractionDigits:2});
+  }
+  function smartPricing(){
+    var product=n("productCost");
+    var ship=n("shippingCost");
+    var ads=n("ads");
+    var pf=n("platformFee");
+    var pay=n("paymentFee");
+    var disc=Math.min(100,n("discount"))/100;
+    var target=n("targetProfit");
+    var margin=Math.min(100,Math.max(0,n("targetMargin")))/100;
+
+    var discountFactor=1-disc;
+    var feeFactor=1-(pf+pay)/100;
+    var fixed=product+ship+ads;
+
+    if(discountFactor<=0 || feeFactor<=0) return;
+
+    var breakEven=fixed/(discountFactor*feeFactor);
+    var targetPrice=(fixed+target)/(discountFactor*feeFactor);
+    var recommended=margin<1
+      ? fixed/((1-margin)*discountFactor*feeFactor)
+      : breakEven;
+
+    var safe=Math.ceil(breakEven*1.10);
+    var higher=Math.ceil(targetPrice*1.25);
+
+    function set(id,value){
+      var e=document.getElementById(id);
+      if(e) e.textContent=money23(value);
+    }
+
+    set("safePrice",safe);
+    set("smartRecommendedPrice",recommended);
+    set("smartTargetPrice",targetPrice);
+    set("higherProfitPrice",higher);
+
+    var box=document.getElementById("pricingExplanation");
+    if(box){
+      var practical = target>0 && targetPrice>recommended ? targetPrice : recommended;
+      var reason = target>0 && targetPrice>recommended
+        ? "your target profit per order"
+        : "your target profit margin";
+      box.innerHTML="<strong>💡 Pricing suggestion:</strong> A practical starting point is <strong>"+
+        money23(practical)+"</strong>, based on "+reason+
+        ". Compare several prices and use your actual marketplace costs before selling.";
+    }
+  }
+
+  window.updateSmartPricing=smartPricing;
+
+  document.addEventListener("DOMContentLoaded",function(){
+    smartPricing();
+    document.querySelectorAll("input,select").forEach(function(el){
+      el.addEventListener("input",smartPricing);
+      el.addEventListener("change",smartPricing);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
