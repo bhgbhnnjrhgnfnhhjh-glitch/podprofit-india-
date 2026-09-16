@@ -4,22 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PODProfit India – POD Profit Calculator & Business Tracker</title>
-
-<meta name="description" content="PODProfit India helps Print-on-Demand sellers calculate profit, pricing, break-even, monthly goals, forecasts and track real business revenue and expenses.">
+<title>PODProfit India - POD Profit Calculator & Business Tracker</title>
+<meta name="description" content="PODProfit India is a free Print-on-Demand profit calculator, pricing tool, goal planner, business tracker and sales forecast tool.">
 <meta name="robots" content="index, follow">
-<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0f172a">
 
 <meta property="og:title" content="PODProfit India">
-<meta property="og:description" content="Calculate POD profit, pricing, goals, forecasts and track business expenses.">
+<meta property="og:description" content="Calculate your real Print-on-Demand profit, pricing, expenses, goals and growth.">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="en_IN">
 
 <style>
 *{
   box-sizing:border-box;
-  margin:0;
-  padding:0;
 }
 
 html{
@@ -27,29 +23,34 @@ html{
 }
 
 body{
+  margin:0;
   font-family:Arial,Helvetica,sans-serif;
   background:#f4f7fb;
-  color:#1f2937;
+  color:#172033;
   line-height:1.5;
 }
 
 a{
-  text-decoration:none;
   color:inherit;
 }
 
-button,
-input,
-select{
-  font:inherit;
+.skip{
+  position:absolute;
+  left:-9999px;
+  top:auto;
 }
 
-button{
-  cursor:pointer;
+.skip:focus{
+  left:10px;
+  top:10px;
+  z-index:9999;
+  background:#fff;
+  padding:10px 15px;
+  border-radius:8px;
 }
 
 header{
-  background:#111827;
+  background:#0f172a;
   color:white;
   position:sticky;
   top:0;
@@ -57,303 +58,218 @@ header{
   box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
-.header-inner{
+.nav{
   max-width:1100px;
   margin:auto;
-  padding:15px 20px;
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap:15px;
+  gap:18px;
+  padding:10px 15px;
+  overflow-x:auto;
 }
 
-.logo{
-  font-size:21px;
-  font-weight:800;
+.brand{
+  min-width:175px;
+  font-weight:bold;
+  font-size:16px;
 }
 
-.logo span{
-  color:#60a5fa;
+.brand small{
+  display:block;
+  font-size:10px;
+  font-weight:normal;
+  opacity:.8;
 }
 
-.tagline{
+.nav a{
+  text-decoration:none;
   font-size:12px;
-  color:#d1d5db;
+  white-space:nowrap;
+  opacity:.9;
 }
 
-nav{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-}
-
-nav a{
-  font-size:12px;
-  padding:7px 8px;
-  border-radius:7px;
-  color:#e5e7eb;
-}
-
-nav a:hover{
-  background:#374151;
+.nav a:hover{
+  opacity:1;
+  text-decoration:underline;
 }
 
 .container{
-  width:calc(100% - 20px);
-  max-width:1000px;
-  margin:20px auto 50px;
+  max-width:1100px;
+  margin:auto;
+  padding:18px 12px 50px;
 }
 
 .hero{
-  background:linear-gradient(135deg,#1d4ed8,#2563eb);
-  color:white;
-  border-radius:18px;
-  padding:28px 22px;
-  margin-bottom:18px;
+  background:linear-gradient(135deg,#2563eb,#1d4ed8);
+  color:#fff;
+  padding:28px 20px;
+  border-radius:14px;
+  margin-bottom:14px;
 }
 
 .hero h1{
-  font-size:29px;
-  margin-bottom:6px;
+  margin:0 0 5px;
+  font-size:25px;
 }
 
 .hero p{
-  color:#dbeafe;
+  margin:0;
+  font-size:14px;
+}
+
+.ad{
+  border:1px dashed #cbd5e1;
+  min-height:65px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#94a3b8;
+  border-radius:9px;
+  margin-bottom:14px;
+  background:#f8fafc;
+  font-size:12px;
 }
 
 .card{
-  background:white;
-  border-radius:15px;
-  padding:20px;
-  margin-bottom:20px;
-  box-shadow:0 3px 14px rgba(15,23,42,.07);
-  border:1px solid #e5e7eb;
+  background:#fff;
+  border-radius:12px;
+  padding:16px;
+  margin-bottom:14px;
+  box-shadow:0 2px 9px rgba(15,23,42,.08);
 }
 
 .card h2{
-  font-size:21px;
-  margin-bottom:14px;
-  color:#111827;
+  margin:0 0 14px;
+  font-size:18px;
 }
 
 .card h3{
-  margin-bottom:10px;
+  font-size:15px;
+  margin-top:20px;
 }
 
-.grid{
+.form-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:14px;
-}
-
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
+  gap:10px;
 }
 
 .field label{
-  font-size:13px;
-  font-weight:700;
-  color:#374151;
+  display:block;
+  font-size:11px;
+  font-weight:bold;
+  margin-bottom:5px;
+}
+
+input,
+select,
+button{
+  font:inherit;
 }
 
 input,
 select{
   width:100%;
-  padding:11px 12px;
-  border:1px solid #cbd5e1;
-  border-radius:9px;
-  background:white;
-  outline:none;
+  padding:10px;
+  border:1px solid #d7dde5;
+  border-radius:8px;
+  background:#fff;
+  color:#172033;
 }
 
-input:focus,
-select:focus{
-  border-color:#2563eb;
-  box-shadow:0 0 0 3px rgba(37,99,235,.12);
-}
-
-.readonly{
-  background:#f1f5f9;
+button{
+  border:0;
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  font-weight:bold;
+  font-size:12px;
 }
 
 .buttons{
   display:flex;
   flex-wrap:wrap;
-  gap:9px;
-  margin-top:17px;
+  gap:7px;
+  margin-top:13px;
 }
 
-.btn{
-  border:none;
-  border-radius:9px;
-  padding:11px 16px;
-  font-weight:700;
-}
-
-.btn-primary{
-  background:#2563eb;
-  color:white;
-}
-
-.btn-danger{
-  background:#dc2626;
-  color:white;
-}
-
-.btn-green{
-  background:#16a34a;
-  color:white;
-}
-
-.btn-purple{
-  background:#7c3aed;
-  color:white;
-}
-
-.btn-dark{
-  background:#111827;
-  color:white;
-}
-
-.btn-gray{
-  background:#e5e7eb;
-  color:#111827;
-}
+.btn-blue{background:#2563eb;color:white}
+.btn-green{background:#16a34a;color:white}
+.btn-purple{background:#7c3aed;color:white}
+.btn-dark{background:#0f172a;color:white}
+.btn-gray{background:#e5e7eb;color:#172033}
+.btn-red{background:#dc2626;color:white}
 
 .results-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:11px;
+  gap:9px;
 }
 
-.result-box{
+.stat{
   background:#f8fafc;
-  border:1px solid #e2e8f0;
-  padding:14px;
-  border-radius:11px;
+  border:1px solid #e4e9ef;
+  border-radius:9px;
+  padding:11px;
 }
 
-.result-box small{
+.stat small{
   display:block;
   color:#64748b;
-  font-size:11px;
-  margin-bottom:5px;
+  font-size:10px;
+  margin-bottom:4px;
 }
 
-.result-box strong{
-  font-size:19px;
-  color:#111827;
+.stat strong{
+  font-size:15px;
 }
 
 .health{
-  padding:13px;
-  border-radius:10px;
+  margin-top:12px;
+  padding:10px;
+  border-radius:8px;
   background:#eff6ff;
-  margin-top:14px;
-  font-weight:700;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.suggestion{
+  margin-top:9px;
+  padding:10px;
+  border-radius:8px;
+  background:#fef3c7;
+  font-size:12px;
 }
 
 .dashboard-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:11px;
+  gap:9px;
 }
 
 .dashboard-card{
-  padding:16px;
+  padding:13px;
   background:#f8fafc;
-  border:1px solid #e2e8f0;
-  border-radius:12px;
+  border:1px solid #e4e9ef;
+  border-radius:9px;
 }
 
 .dashboard-card small{
+  display:block;
   color:#64748b;
+  font-size:10px;
 }
 
 .dashboard-card strong{
-  display:block;
-  margin-top:5px;
-  font-size:19px;
-}
-
-.summary-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:11px;
-}
-
-.summary-item{
-  background:#f8fafc;
-  padding:14px;
-  border-radius:10px;
-  border:1px solid #e2e8f0;
-}
-
-.summary-item span{
-  display:block;
-  color:#64748b;
-  font-size:11px;
-}
-
-.summary-item strong{
-  font-size:18px;
-}
-
-table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:10px;
-}
-
-th,
-td{
-  padding:9px 7px;
-  border-bottom:1px solid #e5e7eb;
-  text-align:left;
-  font-size:12px;
-}
-
-th{
-  background:#f8fafc;
-  font-weight:800;
-}
-
-.table-input{
-  width:100px;
-  padding:7px;
-}
-
-.section-note{
-  color:#64748b;
-  font-size:13px;
-  margin-bottom:12px;
-}
-
-.goal-box{
-  background:#eff6ff;
-  border:1px solid #bfdbfe;
-  padding:16px;
-  border-radius:12px;
-  margin-top:14px;
-}
-
-.goal-big{
-  font-size:26px;
-  font-weight:800;
-  margin:4px 0 12px;
-}
-
-.progress-wrap{
-  margin-top:12px;
+  font-size:16px;
 }
 
 .progress{
-  height:18px;
+  height:14px;
   background:#e5e7eb;
   border-radius:20px;
   overflow:hidden;
+  margin:8px 0;
 }
 
 .progress-bar{
@@ -363,249 +279,150 @@ th{
   transition:.3s;
 }
 
-.progress-text{
-  margin-top:6px;
-  font-weight:700;
-  font-size:13px;
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:12px;
 }
 
-.tip{
-  padding:12px;
+th,
+td{
+  border-bottom:1px solid #e5e7eb;
+  padding:8px 6px;
+  text-align:left;
+}
+
+th{
   background:#f8fafc;
-  border-left:4px solid #2563eb;
-  margin:8px 0;
-  border-radius:5px;
 }
 
-.highlight{
-  background:#fef3c7;
-  border:1px solid #fde68a;
-  padding:14px;
-  border-radius:10px;
-  margin-top:12px;
+.table-wrap{
+  overflow-x:auto;
 }
 
-.tracker-total{
-  background:#eff6ff;
-  border:1px solid #bfdbfe;
-  border-radius:12px;
-  padding:17px;
-  margin-top:15px;
-}
-
-.tracker-profit{
-  font-size:28px;
-  font-weight:800;
-  margin:4px 0;
-}
-
-.tracker-grid{
+.two-col{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:11px;
-  margin-top:15px;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
 }
 
-.tracker-card{
-  background:#f8fafc;
-  border:1px solid #e2e8f0;
-  border-radius:10px;
-  padding:13px;
+.notice{
+  background:#eff6ff;
+  border-left:4px solid #2563eb;
+  padding:10px;
+  border-radius:6px;
+  font-size:12px;
 }
 
-.tracker-card small{
-  display:block;
+.good{
+  color:#15803d;
+  font-weight:bold;
+}
+
+.bad{
+  color:#dc2626;
+  font-weight:bold;
+}
+
+.muted{
   color:#64748b;
-}
-
-.tracker-card strong{
-  font-size:18px;
-}
-
-.ad{
-  min-height:85px;
-  border:1px dashed #cbd5e1;
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#94a3b8;
-  margin:18px 0;
 }
 
 details{
   border-bottom:1px solid #e5e7eb;
-  padding:12px 0;
+  padding:10px 0;
 }
 
 summary{
   cursor:pointer;
-  font-weight:700;
-}
-
-footer{
-  background:#111827;
-  color:#d1d5db;
-  text-align:center;
-  padding:25px 15px;
+  font-weight:bold;
   font-size:13px;
 }
 
+footer{
+  background:#0f172a;
+  color:#cbd5e1;
+  text-align:center;
+  padding:25px 15px;
+  font-size:12px;
+}
+
 footer a{
-  color:#93c5fd;
-  margin:0 4px;
+  margin:0 6px;
 }
 
 @media(max-width:800px){
+  .results-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .dashboard-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .form-grid,
+  .two-col{
+    grid-template-columns:1fr;
+  }
 
   .results-grid{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .dashboard-grid,
-  .summary-grid,
-  .tracker-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .grid{
-    grid-template-columns:1fr;
-  }
-
-  .header-inner{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-}
-
-@media(max-width:560px){
-
-  .container{
-    width:calc(100% - 12px);
-  }
-
-  .hero h1{
-    font-size:25px;
-  }
-
-  .results-grid,
-  .dashboard-grid,
-  .summary-grid,
-  .tracker-grid{
+  .dashboard-grid{
     grid-template-columns:1fr 1fr;
   }
 
-  th,
-  td{
-    font-size:10px;
-    padding:7px 4px;
+  .hero h1{
+    font-size:22px;
   }
 
-  nav{
-    width:100%;
-    overflow-x:auto;
-    flex-wrap:nowrap;
-  }
-
-  nav a{
-    white-space:nowrap;
-  }
-
-  .card{
-    padding:15px;
-  }
-
-}
-
-@media(print){
-
-  header,
-  .buttons,
-  .ad,
-  footer{
-    display:none!important;
-  }
-
-  body{
-    background:white;
-  }
-
-  .card{
-    box-shadow:none;
-    break-inside:avoid;
+  .nav{
+    gap:14px;
   }
 }
 </style>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"PODProfit India",
-  "description":"POD profit calculator and business revenue and expense tracker.",
-  "applicationCategory":"BusinessApplication",
-  "operatingSystem":"Web"
-}
-</script>
-
 </head>
 
 <body>
 
+<a href="#main" class="skip">Skip to content</a>
+
 <header>
+<nav class="nav">
+  <div class="brand">
+    PODProfit India
+    <small>Calculate Your Real POD Profit</small>
+  </div>
 
-<div class="header-inner">
-
-<div>
-<div class="logo">POD<span>Profit</span> India</div>
-<div class="tagline">Calculate Your Real POD Profit</div>
-</div>
-
-<nav>
-<a href="#calculator">Calculator</a>
-<a href="#dashboard">Dashboard</a>
-<a href="#tracker">Tracker</a>
-<a href="#goal">Goal Planner</a>
-<a href="#comparison">Comparison</a>
-<a href="#simulator">Simulator</a>
-<a href="#forecast">Forecast</a>
-<a href="#how">How It Works</a>
-<a href="#faq">FAQ</a>
+  <a href="#calculator">Calculator</a>
+  <a href="#dashboard">Dashboard</a>
+  <a href="#tracker">Tracker</a>
+  <a href="#goals">Goal Planner</a>
+  <a href="#comparison">Comparison</a>
+  <a href="#simulator">Simulator</a>
+  <a href="#forecast">Forecast</a>
+  <a href="#how">How It Works</a>
+  <a href="#faq">FAQ</a>
 </nav>
-
-</div>
-
 </header>
 
-
-<main class="container" id="main">
+<main id="main" class="container">
 
 <section class="hero">
-
-<h1>PODProfit India</h1>
-
-<p>
-Calculate your real Print-on-Demand profit, pricing, expenses, goals and growth.
-</p>
-
+  <h1>PODProfit India</h1>
+  <p>Calculate your real Print-on-Demand profit, pricing, expenses, goals and growth.</p>
 </section>
 
+<div class="ad">Advertisement</div>
 
-<div class="ad">
-Advertisement
-</div>
-
-
-<!-- =========================
-     CALCULATOR
-========================= -->
-
+<!-- CALCULATOR -->
 <section id="calculator" class="card">
-
 <h2>🧮 POD Profit Calculator</h2>
 
-<div class="grid">
+<div class="form-grid">
 
 <div class="field">
 <label>Currency</label>
@@ -630,12 +447,12 @@ Advertisement
 
 <div class="field">
 <label>Marketplace / Selling Platform</label>
-<select id="marketplace">
+<select id="platform">
 <option value="Custom">Custom</option>
-<option value="Etsy">Etsy - Estimated</option>
-<option value="Shopify">Shopify / Own Store - Estimated</option>
-<option value="Amazon">Amazon - Estimated</option>
-<option value="Other">Other Platform</option>
+<option value="Etsy - Estimated">Etsy - Estimated</option>
+<option value="Shopify / Own Store - Estimated">Shopify / Own Store - Estimated</option>
+<option value="Amazon - Estimated">Amazon - Estimated</option>
+<option value="Other Platform">Other Platform</option>
 </select>
 </div>
 
@@ -666,12 +483,12 @@ Advertisement
 
 <div class="field">
 <label>Discount %</label>
-<input id="discount" type="number" value="0" min="0">
+<input id="discount" type="number" value="0" min="0" max="100">
 </div>
 
 <div class="field">
 <label>Advertising Cost / Order</label>
-<input id="adCost" type="number" value="0" min="0">
+<input id="adsCost" type="number" value="0" min="0">
 </div>
 
 <div class="field">
@@ -702,127 +519,96 @@ Advertisement
 </div>
 
 <div class="buttons">
-
-<button class="btn btn-primary" onclick="calculate()">
-Calculate Profit
-</button>
-
-<button class="btn btn-gray" onclick="resetCalculator()">
-Reset
-</button>
-
-<button class="btn btn-purple" onclick="copyResult()">
-Copy Result
-</button>
-
-<button class="btn btn-green" onclick="shareResult()">
-Share Result
-</button>
-
-<button class="btn btn-dark" onclick="window.print()">
-Print / Save PDF
-</button>
-
+<button class="btn-blue" onclick="calculate()">Calculate Profit</button>
+<button class="btn-gray" onclick="resetCalculator()">Reset</button>
+<button class="btn-purple" onclick="copyResult()">Copy Result</button>
+<button class="btn-green" onclick="shareResult()">Share Result</button>
+<button class="btn-dark" onclick="window.print()">Print / Save PDF</button>
 </div>
-
 </section>
 
-
-<!-- =========================
-     RESULTS
-========================= -->
-
+<!-- RESULTS -->
 <section class="card">
-
 <h2>📊 Profit Results</h2>
 
 <div class="results-grid">
 
-<div class="result-box">
+<div class="stat">
 <small>Profit / Order</small>
-<strong id="profitResult">₹0</strong>
+<strong id="profitOrder">₹0.00</strong>
 </div>
 
-<div class="result-box">
+<div class="stat">
 <small>Profit Margin</small>
-<strong id="marginResult">0%</strong>
+<strong id="profitMargin">0%</strong>
 </div>
 
-<div class="result-box">
+<div class="stat">
 <small>Total Cost / Order</small>
-<strong id="totalCostResult">₹0</strong>
+<strong id="totalCost">₹0.00</strong>
 </div>
 
-<div class="result-box">
+<div class="stat">
 <small>Monthly Sales</small>
-<strong id="monthlySalesResult">₹0</strong>
+<strong id="monthlySales">₹0.00</strong>
 </div>
 
-<div class="result-box">
+<div class="stat">
 <small>Monthly Profit</small>
-<strong id="monthlyProfitResult">₹0</strong>
+<strong id="monthlyProfit">₹0.00</strong>
 </div>
 
-<div class="result-box">
+<div class="stat">
 <small>Break-even Price</small>
-<strong id="breakEvenResult">₹0</strong>
+<strong id="breakEven">₹0.00</strong>
 </div>
 
-<div class="result-box">
+<div class="stat">
 <small>Price for Target Profit</small>
-<strong id="targetPriceResult">₹0</strong>
+<strong id="targetPrice">₹0.00</strong>
 </div>
 
-<div class="result-box">
+<div class="stat">
 <small>Recommended Selling Price</small>
-<strong id="recommendedPriceResult">₹0</strong>
+<strong id="recommendedPrice">₹0.00</strong>
 </div>
 
-<div class="result-box">
+<div class="stat">
 <small>Expected Profit @ Recommended</small>
-<strong id="recommendedProfitResult">₹0</strong>
+<strong id="recommendedProfit">₹0.00</strong>
 </div>
 
-<div class="result-box">
+<div class="stat">
 <small>Orders Needed</small>
-<strong id="ordersNeededResult">0</strong>
+<strong id="ordersNeeded">0</strong>
 </div>
 
 </div>
 
-<div id="profitHealth" class="health">
-Profit Health: —
+<div class="health" id="profitHealth">
+Profit Health: ⚪ Break-even
 </div>
 
-<div class="highlight">
-
-<strong>Automatic Pricing Suggestion:</strong>
-
-<span id="pricingSuggestion">—</span>
-
+<div class="suggestion" id="pricingSuggestion">
+Automatic Pricing Suggestion: Enter your numbers and calculate.
 </div>
 
 </section>
 
-
-<!-- =========================
-     DASHBOARD
-========================= -->
-
+<!-- DASHBOARD -->
 <section id="dashboard" class="card">
-
 <h2>📈 POD Seller Dashboard</h2>
 
 <div class="dashboard-grid">
 
 <div class="dashboard-card">
 <small>Total Sales</small>
-<strong id="dashboardSales">₹0</strong>
+<strong id="dashboardSales">₹0.00</strong>
 </div>
 
 <div class="dashboard-card">
 <small>Total Profit</small>
-<strong id="dashboardProfit">₹0</strong>
+<strong id="dashboardProfit">₹0.00</strong>
 </div>
 
 <div class="dashboard-card">
@@ -832,12 +618,12 @@ Profit Health: —
 
 <div class="dashboard-card">
 <small>Best Product</small>
-<strong id="dashboardProduct">—</strong>
+<strong id="dashboardProduct">-</strong>
 </div>
 
 <div class="dashboard-card">
 <small>Best Price</small>
-<strong id="dashboardBestPrice">₹0</strong>
+<strong id="dashboardBestPrice">₹0.00</strong>
 </div>
 
 <div class="dashboard-card">
@@ -847,46 +633,31 @@ Profit Health: —
 
 </div>
 
-<div id="dashboardHealth" class="health">
-Calculate your profit to update the dashboard.
+<div class="health" id="dashboardHealth">
+Profit Health: ⚪ Break-even
 </div>
 
-<h3 style="margin-top:18px;">
-Monthly Profit Goal
-</h3>
-
-<div class="progress-wrap">
-
+<h3>Monthly Profit Goal</h3>
+<div id="dashboardGoalText">0% of monthly goal</div>
 <div class="progress">
-<div id="goalProgressBar" class="progress-bar"></div>
-</div>
-
-<div id="goalProgressText" class="progress-text">
-0% of goal
-</div>
-
+<div id="dashboardProgress" class="progress-bar"></div>
 </div>
 
 </section>
 
-
-<!-- =========================
-     STEP 30 TRACKER
-========================= -->
-
+<!-- STEP 30 TRACKER -->
 <section id="tracker" class="card">
-
 <h2>📒 POD Business Revenue & Expense Tracker</h2>
 
-<p class="section-note">
+<p class="muted">
 Track your actual business revenue, orders and expenses separately from the calculator.
 </p>
 
-<div class="grid">
+<div class="form-grid">
 
 <div class="field">
 <label>Tracking Month</label>
-<input id="trackerMonth" type="month">
+<input id="trackerMonth" type="month" value="2026-09">
 </div>
 
 <div class="field">
@@ -901,7 +672,7 @@ Track your actual business revenue, orders and expenses separately from the calc
 
 <div class="field">
 <label>Product Cost</label>
-<input id="trackerProductCost" type="number" value="0" min="0">
+<input id="trackerProduct" type="number" value="0" min="0">
 </div>
 
 <div class="field">
@@ -932,92 +703,64 @@ Track your actual business revenue, orders and expenses separately from the calc
 </div>
 
 <div class="buttons">
-
-<button class="btn btn-primary" onclick="calculateTracker()">
-Calculate Tracker
-</button>
-
-<button class="btn btn-green" onclick="saveTracker()">
-Save Tracker
-</button>
-
-<button class="btn btn-purple" onclick="loadTracker()">
-Load Tracker
-</button>
-
-<button class="btn btn-danger" onclick="clearTracker()">
-Clear Tracker
-</button>
-
+<button class="btn-blue" onclick="calculateTracker()">Calculate Tracker</button>
+<button class="btn-green" onclick="saveTracker()">Save Tracker</button>
+<button class="btn-purple" onclick="loadTracker()">Load Tracker</button>
+<button class="btn-gray" onclick="clearTracker()">Clear Tracker</button>
 </div>
 
-
-<div class="tracker-total">
-
-<div>Real Business Net Profit</div>
-
-<div class="tracker-profit" id="trackerNetProfit">
-₹0.00
+<div class="notice" style="margin-top:14px">
+<strong>Important:</strong> Tracker data is separate from the main calculator. Empty tracker values will NOT change your calculator results.
 </div>
 
-<div id="trackerStatus">
-Enter your actual business numbers.
-</div>
+<div class="results-grid" style="margin-top:14px">
 
-</div>
-
-
-<div class="tracker-grid">
-
-<div class="tracker-card">
+<div class="stat">
 <small>Total Revenue</small>
 <strong id="trackerTotalRevenue">₹0</strong>
 </div>
 
-<div class="tracker-card">
+<div class="stat">
 <small>Total Expenses</small>
 <strong id="trackerTotalExpenses">₹0</strong>
 </div>
 
-<div class="tracker-card">
+<div class="stat">
 <small>Net Profit</small>
-<strong id="trackerProfitCard">₹0</strong>
+<strong id="trackerNetProfit">₹0</strong>
 </div>
 
-<div class="tracker-card">
+<div class="stat">
 <small>Real Profit Margin</small>
 <strong id="trackerMargin">0%</strong>
 </div>
 
-<div class="tracker-card">
+<div class="stat">
 <small>Orders</small>
-<strong id="trackerOrderCard">0</strong>
+<strong id="trackerResultOrders">0</strong>
 </div>
 
-<div class="tracker-card">
+<div class="stat">
 <small>Revenue / Order</small>
 <strong id="trackerRevenueOrder">₹0</strong>
 </div>
 
-<div class="tracker-card">
+<div class="stat">
 <small>Profit / Order</small>
 <strong id="trackerProfitOrder">₹0</strong>
 </div>
 
-<div class="tracker-card">
+<div class="stat">
 <small>Expense / Order</small>
 <strong id="trackerExpenseOrder">₹0</strong>
 </div>
 
 </div>
 
+<h3>Actual Expense Breakdown</h3>
 
-<h3 style="margin-top:20px;">
-Actual Expense Breakdown
-</h3>
-
+<div class="table-wrap">
 <table>
-
 <thead>
 <tr>
 <th>Expense</th>
@@ -1025,258 +768,146 @@ Actual Expense Breakdown
 <th>% of Revenue</th>
 </tr>
 </thead>
-
-<tbody>
-
-<tr>
-<td>Product Cost</td>
-<td id="trackerProductOutput">₹0</td>
-<td id="trackerProductPercent">0%</td>
-</tr>
-
-<tr>
-<td>Shipping</td>
-<td id="trackerShippingOutput">₹0</td>
-<td id="trackerShippingPercent">0%</td>
-</tr>
-
-<tr>
-<td>Platform Fees</td>
-<td id="trackerPlatformOutput">₹0</td>
-<td id="trackerPlatformPercent">0%</td>
-</tr>
-
-<tr>
-<td>Payment Fees</td>
-<td id="trackerPaymentOutput">₹0</td>
-<td id="trackerPaymentPercent">0%</td>
-</tr>
-
-<tr>
-<td>Advertising</td>
-<td id="trackerAdsOutput">₹0</td>
-<td id="trackerAdsPercent">0%</td>
-</tr>
-
-<tr>
-<td>Other Expenses</td>
-<td id="trackerOtherOutput">₹0</td>
-<td id="trackerOtherPercent">0%</td>
-</tr>
-
-<tr>
-<th>Total</th>
-<th id="trackerExpenseTotalOutput">₹0</th>
-<th id="trackerExpensePercent">0%</th>
-</tr>
-
-</tbody>
-
+<tbody id="trackerExpenseTable"></tbody>
 </table>
+</div>
 
 </section>
 
-
-<!-- =========================
-     BUSINESS SUMMARY
-========================= -->
-
+<!-- BUSINESS SUMMARY -->
 <section class="card">
-
 <h2>💼 Business Summary</h2>
 
-<div class="summary-grid">
+<div class="dashboard-grid">
 
-<div class="summary-item">
-<span>Daily Revenue</span>
-<strong id="dailyRevenue">₹0</strong>
+<div class="dashboard-card">
+<small>Daily Revenue</small>
+<strong id="dailyRevenue">₹0.00</strong>
 </div>
 
-<div class="summary-item">
-<span>Daily Profit</span>
-<strong id="dailyProfit">₹0</strong>
+<div class="dashboard-card">
+<small>Daily Profit</small>
+<strong id="dailyProfit">₹0.00</strong>
 </div>
 
-<div class="summary-item">
-<span>Monthly Revenue</span>
-<strong id="monthlyRevenue">₹0</strong>
+<div class="dashboard-card">
+<small>Monthly Revenue</small>
+<strong id="summaryMonthlyRevenue">₹0.00</strong>
 </div>
 
-<div class="summary-item">
-<span>Monthly Net Profit</span>
-<strong id="monthlyNetProfit">₹0</strong>
+<div class="dashboard-card">
+<small>Monthly Net Profit</small>
+<strong id="summaryMonthlyProfit">₹0.00</strong>
 </div>
 
-<div class="summary-item">
-<span>Yearly Revenue</span>
-<strong id="yearlyRevenue">₹0</strong>
+<div class="dashboard-card">
+<small>Yearly Revenue</small>
+<strong id="yearlyRevenue">₹0.00</strong>
 </div>
 
-<div class="summary-item">
-<span>Yearly Net Profit</span>
-<strong id="yearlyNetProfit">₹0</strong>
+<div class="dashboard-card">
+<small>Yearly Net Profit</small>
+<strong id="yearlyProfit">₹0.00</strong>
 </div>
 
 </div>
-
 </section>
 
-
-<!-- =========================
-     MONTHLY EXPENSE
-========================= -->
-
+<!-- EXPENSE -->
 <section class="card">
-
 <h2>💰 Monthly Expense Breakdown</h2>
 
+<div class="table-wrap">
 <table>
-
 <thead>
 <tr>
 <th>Expense</th>
 <th>Monthly Amount</th>
 </tr>
 </thead>
-
-<tbody>
-
-<tr>
-<td>Product Cost</td>
-<td id="expenseProduct">₹0</td>
-</tr>
-
-<tr>
-<td>Shipping</td>
-<td id="expenseShipping">₹0</td>
-</tr>
-
-<tr>
-<td>Platform Fees</td>
-<td id="expensePlatform">₹0</td>
-</tr>
-
-<tr>
-<td>Payment Fees</td>
-<td id="expensePayment">₹0</td>
-</tr>
-
-<tr>
-<td>Advertising</td>
-<td id="expenseAds">₹0</td>
-</tr>
-
-<tr>
-<th>Total Expenses</th>
-<th id="expenseTotal">₹0</th>
-</tr>
-
-</tbody>
-
+<tbody id="expenseTable"></tbody>
 </table>
-
+</div>
 </section>
 
-
-<!-- =========================
-     GOAL PLANNER
-========================= -->
-
-<section id="goal" class="card">
-
+<!-- GOAL -->
+<section id="goals" class="card">
 <h2>🎯 Goal & Growth Planner</h2>
 
-<p class="section-note">
+<p class="muted">
 Set a monthly profit goal and see how many orders or how much profit per order you may need.
 </p>
 
-<div class="grid">
+<div class="form-grid">
 
 <div class="field">
-
 <label>Goal Preset</label>
-
-<select id="goalPreset" onchange="applyGoalPreset()">
-
+<select id="goalPreset" onchange="changeGoalPreset()">
 <option value="5000">₹5,000</option>
 <option value="10000">₹10,000</option>
-<option value="20000">₹20,000</option>
+<option value="20000" selected>₹20,000</option>
 <option value="50000">₹50,000</option>
 <option value="custom">Custom</option>
-
 </select>
-
 </div>
 
 <div class="field">
-
 <label>Monthly Profit Goal</label>
-
-<input
-id="goalAmount"
-type="number"
-value="20000"
-min="0"
-oninput="customGoalChange()"
->
-
+<input id="goalAmount" type="number" value="20000" min="0">
 </div>
 
 </div>
 
+<div class="buttons">
+<button class="btn-blue" onclick="calculateGoal()">Calculate Goal</button>
+</div>
 
-<div class="goal-box">
+<div class="results-grid" style="margin-top:14px">
 
-<div>Current Monthly Profit</div>
-<div class="goal-big" id="plannerCurrent">₹0</div>
+<div class="stat">
+<small>Current Monthly Profit</small>
+<strong id="goalCurrent">₹0</strong>
+</div>
 
-<div>Goal Amount</div>
-<div class="goal-big" id="plannerGoal">₹0</div>
+<div class="stat">
+<small>Goal Amount</small>
+<strong id="goalValue">₹0</strong>
+</div>
 
-<div>Remaining Profit</div>
-<div class="goal-big" id="plannerRemaining">₹0</div>
+<div class="stat">
+<small>Remaining Profit</small>
+<strong id="goalRemaining">₹0</strong>
+</div>
 
-<div>Progress</div>
-<strong id="plannerProgress">0%</strong>
+<div class="stat">
+<small>Progress</small>
+<strong id="goalProgress">0%</strong>
+</div>
 
-<div class="progress-wrap">
+<div class="stat">
+<small>Current Orders</small>
+<strong id="goalOrders">0</strong>
+</div>
 
-<div class="progress">
-<div id="plannerProgressBar" class="progress-bar"></div>
+<div class="stat">
+<small>Orders Needed</small>
+<strong id="goalOrdersNeeded">0</strong>
+</div>
+
+<div class="stat">
+<small>Extra Orders Needed</small>
+<strong id="goalExtraOrders">0</strong>
+</div>
+
+<div class="stat">
+<small>Required Profit / Order</small>
+<strong id="goalRequiredProfit">₹0</strong>
 </div>
 
 </div>
 
-</div>
-
-
-<div class="summary-grid" style="margin-top:15px;">
-
-<div class="summary-item">
-<span>Current Orders</span>
-<strong id="plannerCurrentOrders">0</strong>
-</div>
-
-<div class="summary-item">
-<span>Orders Needed</span>
-<strong id="plannerOrdersNeeded">0</strong>
-</div>
-
-<div class="summary-item">
-<span>Extra Orders Needed</span>
-<strong id="plannerExtraOrders">0</strong>
-</div>
-
-<div class="summary-item">
-<span>Required Profit / Order</span>
-<strong id="plannerRequiredProfit">₹0</strong>
-</div>
-
-</div>
-
-
+<div class="table-wrap" style="margin-top:14px">
 <table>
-
 <thead>
 <tr>
 <th>Goal</th>
@@ -1286,80 +917,41 @@ oninput="customGoalChange()"
 <th>Extra Orders</th>
 </tr>
 </thead>
-
 <tbody>
-
 <tr>
-<td id="plannerTableGoal">₹0</td>
-<td id="plannerTableCurrent">₹0</td>
-<td id="plannerTableRemaining">₹0</td>
-<td id="plannerTableProgress">0%</td>
-<td id="plannerTableExtra">0</td>
+<td id="goalTableGoal">₹0</td>
+<td id="goalTableCurrent">₹0</td>
+<td id="goalTableRemaining">₹0</td>
+<td id="goalTableProgress">0%</td>
+<td id="goalTableExtra">0</td>
 </tr>
-
 </tbody>
-
 </table>
+</div>
 
 </section>
 
-
-<!-- =========================
-     PRICE COMPARISON
-========================= -->
-
+<!-- PRICE COMPARISON -->
 <section id="comparison" class="card">
-
 <h2>💵 Price Comparison</h2>
+<p class="muted">Test different selling prices using your current calculator costs and fees.</p>
 
-<p class="section-note">
-Test different selling prices using your current calculator costs and fees.
-</p>
-
-<div class="grid">
-
-<div class="field">
-<label>Test Price 1</label>
-<input id="price1" type="number" value="399">
+<div class="form-grid">
+<div class="field"><label>Test Price 1</label><input class="testPrice" type="number" value="399"></div>
+<div class="field"><label>Test Price 2</label><input class="testPrice" type="number" value="499"></div>
+<div class="field"><label>Test Price 3</label><input class="testPrice" type="number" value="599"></div>
+<div class="field"><label>Test Price 4</label><input class="testPrice" type="number" value="699"></div>
+<div class="field"><label>Test Price 5</label><input class="testPrice" type="number" value="799"></div>
 </div>
 
-<div class="field">
-<label>Test Price 2</label>
-<input id="price2" type="number" value="499">
-</div>
-
-<div class="field">
-<label>Test Price 3</label>
-<input id="price3" type="number" value="599">
-</div>
-
-<div class="field">
-<label>Test Price 4</label>
-<input id="price4" type="number" value="699">
-</div>
-
-<div class="field">
-<label>Test Price 5</label>
-<input id="price5" type="number" value="799">
-</div>
-
-</div>
-
-<div class="highlight">
-
-Best Test Price:
-<strong id="bestTestPrice">₹0</strong>
-
+<div class="notice" style="margin-top:12px">
+Best Test Price: <strong id="bestTestPrice">₹0</strong>
 &nbsp; | &nbsp;
-
-Profit:
-<strong id="bestTestProfit">₹0</strong>
-
+Profit: <strong id="bestTestProfit">₹0</strong>
 </div>
 
-
+<div class="table-wrap" style="margin-top:12px">
 <table>
-
 <thead>
 <tr>
 <th>Price</th>
@@ -1368,28 +960,18 @@ Profit:
 <th>Status</th>
 </tr>
 </thead>
-
-<tbody id="priceComparisonBody"></tbody>
-
+<tbody id="priceComparisonTable"></tbody>
 </table>
-
+</div>
 </section>
 
-
-<!-- =========================
-     PRODUCT COMPARISON
-========================= -->
-
+<!-- PRODUCT COMPARISON -->
 <section class="card">
-
 <h2>📦 Product Profit Comparison</h2>
+<p class="muted">Compare different product costs using your current selling price and other calculator settings.</p>
 
-<p class="section-note">
-Compare different product costs using your current selling price and other calculator settings.
-</p>
-
+<div class="table-wrap">
 <table>
-
 <thead>
 <tr>
 <th>Product</th>
@@ -1398,264 +980,143 @@ Compare different product costs using your current selling price and other calcu
 <th>Margin</th>
 </tr>
 </thead>
-
-<tbody id="productComparisonBody"></tbody>
-
+<tbody id="productComparisonTable"></tbody>
 </table>
-
+</div>
 </section>
 
-
-<!-- =========================
-     SCENARIO SIMULATOR
-========================= -->
-
+<!-- SIMULATOR -->
 <section id="simulator" class="card">
-
 <h2>🔬 Price Scenario Simulator</h2>
+<p class="muted">Compare different pricing, discount, advertising and sales scenarios.</p>
 
-<p class="section-note">
-Compare different pricing, discount, advertising and sales scenarios.
-</p>
-
+<div class="table-wrap">
 <table>
-
 <thead>
-
 <tr>
 <th>Scenario</th>
 <th>Price</th>
 <th>Discount</th>
 <th>Ads</th>
 <th>Orders</th>
-<th>Profit/Order</th>
+<th>Profit / Order</th>
 <th>Monthly Profit</th>
 <th>Change</th>
 </tr>
-
 </thead>
-
 <tbody>
 
 <tr>
-
-<td><strong>Scenario 1 – Current</strong></td>
-
-<td>
-<input id="s1Price" class="table-input readonly" readonly>
-</td>
-
-<td>
-<input id="s1Discount" class="table-input readonly" readonly>
-</td>
-
-<td>
-<input id="s1Ads" class="table-input readonly" readonly>
-</td>
-
-<td>
-<input id="s1Orders" class="table-input readonly" readonly>
-</td>
-
-<td id="s1Profit">₹0</td>
-<td id="s1Monthly">₹0</td>
-<td id="s1Change">₹0</td>
-
+<td>Scenario 1 – Current</td>
+<td><input id="s1price" type="number" readonly></td>
+<td><input id="s1discount" type="number" readonly></td>
+<td><input id="s1ads" type="number" readonly></td>
+<td><input id="s1orders" type="number" readonly></td>
+<td id="s1profit">₹0</td>
+<td id="s1monthly">₹0</td>
+<td>₹0</td>
 </tr>
 
-
 <tr>
-
-<td><strong>Scenario 2 – Higher Price</strong></td>
-
-<td>
-<input id="s2Price" class="table-input" type="number" value="699">
-</td>
-
-<td>
-<input id="s2Discount" class="table-input" type="number" value="0">
-</td>
-
-<td>
-<input id="s2Ads" class="table-input" type="number" value="0">
-</td>
-
-<td>
-<input id="s2Orders" class="table-input" type="number" value="30">
-</td>
-
-<td id="s2Profit">₹0</td>
-<td id="s2Monthly">₹0</td>
-<td id="s2Change">₹0</td>
-
+<td>Scenario 2 – Higher Price</td>
+<td><input id="s2price" type="number" value="699"></td>
+<td><input id="s2discount" type="number" value="0"></td>
+<td><input id="s2ads" type="number" value="0"></td>
+<td><input id="s2orders" type="number" value="30"></td>
+<td id="s2profit">₹0</td>
+<td id="s2monthly">₹0</td>
+<td id="s2change">₹0</td>
 </tr>
 
-
 <tr>
-
-<td><strong>Scenario 3 – Discount Test</strong></td>
-
-<td>
-<input id="s3Price" class="table-input" type="number" value="699">
-</td>
-
-<td>
-<input id="s3Discount" class="table-input" type="number" value="10">
-</td>
-
-<td>
-<input id="s3Ads" class="table-input" type="number" value="0">
-</td>
-
-<td>
-<input id="s3Orders" class="table-input" type="number" value="30">
-</td>
-
-<td id="s3Profit">₹0</td>
-<td id="s3Monthly">₹0</td>
-<td id="s3Change">₹0</td>
-
+<td>Scenario 3 – Discount Test</td>
+<td><input id="s3price" type="number" value="699"></td>
+<td><input id="s3discount" type="number" value="10"></td>
+<td><input id="s3ads" type="number" value="0"></td>
+<td><input id="s3orders" type="number" value="30"></td>
+<td id="s3profit">₹0</td>
+<td id="s3monthly">₹0</td>
+<td id="s3change">₹0</td>
 </tr>
 
-
 <tr>
-
-<td><strong>Scenario 4 – Ads Test</strong></td>
-
-<td>
-<input id="s4Price" class="table-input" type="number" value="699">
-</td>
-
-<td>
-<input id="s4Discount" class="table-input" type="number" value="0">
-</td>
-
-<td>
-<input id="s4Ads" class="table-input" type="number" value="50">
-</td>
-
-<td>
-<input id="s4Orders" class="table-input" type="number" value="30">
-</td>
-
-<td id="s4Profit">₹0</td>
-<td id="s4Monthly">₹0</td>
-<td id="s4Change">₹0</td>
-
+<td>Scenario 4 – Ads Test</td>
+<td><input id="s4price" type="number" value="699"></td>
+<td><input id="s4discount" type="number" value="0"></td>
+<td><input id="s4ads" type="number" value="50"></td>
+<td><input id="s4orders" type="number" value="30"></td>
+<td id="s4profit">₹0</td>
+<td id="s4monthly">₹0</td>
+<td id="s4change">₹0</td>
 </tr>
 
 </tbody>
-
 </table>
-
+</div>
 </section>
 
-
-<!-- =========================
-     ANALYZER
-========================= -->
-
+<!-- COST ANALYZER -->
 <section class="card">
-
 <h2>⚖️ Break-Even & Cost Analyzer</h2>
 
-<div class="summary-grid">
+<div class="results-grid">
 
-<div class="summary-item">
-<span>Fixed Cost / Order</span>
-<strong id="fixedCostAnalyzer">₹0</strong>
+<div class="stat">
+<small>Fixed Cost / Order</small>
+<strong id="fixedCost">₹0</strong>
 </div>
 
-<div class="summary-item">
-<span>Platform Fee / Order</span>
-<strong id="platformAnalyzer">₹0</strong>
+<div class="stat">
+<small>Platform Fee / Order</small>
+<strong id="platformCostOrder">₹0</strong>
 </div>
 
-<div class="summary-item">
-<span>Payment Fee / Order</span>
-<strong id="paymentAnalyzer">₹0</strong>
+<div class="stat">
+<small>Payment Fee / Order</small>
+<strong id="paymentCostOrder">₹0</strong>
 </div>
 
-<div class="summary-item">
-<span>Total Expenses / Order</span>
-<strong id="totalExpenseAnalyzer">₹0</strong>
+<div class="stat">
+<small>Total Expenses / Order</small>
+<strong id="analyzerTotal">₹0</strong>
 </div>
 
-<div class="summary-item">
-<span>Net Selling Revenue</span>
-<strong id="netRevenueAnalyzer">₹0</strong>
+<div class="stat">
+<small>Net Selling Revenue</small>
+<strong id="netRevenue">₹0</strong>
 </div>
 
-<div class="summary-item">
-<span>Current Profit / Order</span>
-<strong id="currentProfitAnalyzer">₹0</strong>
+<div class="stat">
+<small>Current Profit / Order</small>
+<strong id="analyzerProfit">₹0</strong>
 </div>
 
 </div>
 
-
+<div class="table-wrap" style="margin-top:12px">
 <table>
-
 <thead>
-<tr>
-<th>Zone</th>
-<th>Price</th>
-</tr>
+<tr><th>Zone</th><th>Price</th></tr>
 </thead>
-
 <tbody>
-
-<tr>
-<td>Below Break-even</td>
-<td id="belowBreakEven">Below ₹0</td>
-</tr>
-
-<tr>
-<td>Break-even</td>
-<td id="breakEvenAnalyzer">₹0</td>
-</tr>
-
-<tr>
-<td>Above Break-even</td>
-<td id="aboveBreakEven">Above ₹0</td>
-</tr>
-
-<tr>
-<td>Price for +₹100 Profit</td>
-<td id="profit100Price">₹0</td>
-</tr>
-
-<tr>
-<td>Price for +₹200 Profit</td>
-<td id="profit200Price">₹0</td>
-</tr>
-
-<tr>
-<td>Price for +₹300 Profit</td>
-<td id="profit300Price">₹0</td>
-</tr>
-
+<tr><td>Below Break-even</td><td id="belowBE">Below ₹0</td></tr>
+<tr><td>Break-even</td><td id="atBE">₹0</td></tr>
+<tr><td>Above Break-even</td><td id="aboveBE">Above ₹0</td></tr>
+<tr><td>Price for +₹100 Profit</td><td id="plus100">₹0</td></tr>
+<tr><td>Price for +₹200 Profit</td><td id="plus200">₹0</td></tr>
+<tr><td>Price for +₹300 Profit</td><td id="plus300">₹0</td></tr>
 </tbody>
-
 </table>
-
+</div>
 </section>
 
-
-<!-- =========================
-     PROFIT LADDER
-========================= -->
-
+<!-- LADDER -->
 <section class="card">
-
 <h2>🪜 Profit Target Ladder</h2>
+<p class="muted">See the selling price required for different profit targets.</p>
 
-<p class="section-note">
-See the selling price required for different profit targets.
-</p>
-
+<div class="table-wrap">
 <table>
-
 <thead>
 <tr>
 <th>Target</th>
@@ -1666,53 +1127,43 @@ See the selling price required for different profit targets.
 <th>Orders ₹20K</th>
 </tr>
 </thead>
-
-<tbody id="profitLadderBody"></tbody>
-
+<tbody id="ladderTable"></tbody>
 </table>
-
+</div>
 </section>
 
-
-<!-- =========================
-     FORECAST
-========================= -->
-
+<!-- FORECAST -->
 <section id="forecast" class="card">
-
 <h2>📅 Sales & Profit Forecast</h2>
 
-<div class="summary-grid">
+<div class="results-grid">
 
-<div class="summary-item">
-<span>Current Monthly Orders</span>
+<div class="stat">
+<small>Current Monthly Orders</small>
 <strong id="forecastOrders">0</strong>
 </div>
 
-<div class="summary-item">
-<span>Current Profit / Order</span>
+<div class="stat">
+<small>Current Profit / Order</small>
 <strong id="forecastProfitOrder">₹0</strong>
 </div>
 
-<div class="summary-item">
-<span>Current Monthly Revenue</span>
+<div class="stat">
+<small>Current Monthly Revenue</small>
 <strong id="forecastRevenue">₹0</strong>
 </div>
 
-<div class="summary-item">
-<span>Current Monthly Profit</span>
+<div class="stat">
+<small>Current Monthly Profit</small>
 <strong id="forecastMonthlyProfit">₹0</strong>
 </div>
 
 </div>
 
+<h3>Time-Based Forecast</h3>
 
-<h3 style="margin-top:18px;">
-Time-Based Forecast
-</h3>
-
+<div class="table-wrap">
 <table>
-
 <thead>
 <tr>
 <th>Period</th>
@@ -1722,18 +1173,14 @@ Time-Based Forecast
 <th>Net Profit</th>
 </tr>
 </thead>
-
 <tbody id="forecastTable"></tbody>
-
 </table>
+</div>
 
+<h3>30-Day Sales Scenarios</h3>
 
-<h3 style="margin-top:18px;">
-30-Day Sales Scenarios
-</h3>
-
+<div class="table-wrap">
 <table>
-
 <thead>
 <tr>
 <th>Scenario</th>
@@ -1742,226 +1189,142 @@ Time-Based Forecast
 <th>Net Profit</th>
 </tr>
 </thead>
-
-<tbody id="salesScenarioBody"></tbody>
-
+<tbody id="salesScenarioTable"></tbody>
 </table>
-
+</div>
 </section>
 
-
-<!-- =========================
-     SMART TIPS
-========================= -->
-
+<!-- TIPS -->
 <section class="card">
-
 <h2>💡 Smart Pricing Tips</h2>
-
-<div id="smartTips"></div>
-
+<div id="smartTips">
+Calculate your profit to see smart pricing tips.
+</div>
 </section>
 
-
-<!-- =========================
-     SAVE CALCULATOR
-========================= -->
-
+<!-- SAVE -->
 <section class="card">
-
 <h2>💾 Save Your Calculation</h2>
-
-<p class="section-note">
-Your calculator data is saved locally in this browser.
-</p>
+<p class="muted">Your calculator data is saved locally in this browser.</p>
 
 <div class="buttons">
-
-<button class="btn btn-green" onclick="saveCalculation()">
-Save Calculation
-</button>
-
-<button class="btn btn-primary" onclick="loadCalculation()">
-Load Calculation
-</button>
-
-<button class="btn btn-danger" onclick="clearSavedCalculation()">
-Clear Saved Data
-</button>
-
+<button class="btn-green" onclick="saveCalculation()">Save Calculation</button>
+<button class="btn-purple" onclick="loadCalculation()">Load Calculation</button>
+<button class="btn-gray" onclick="clearCalculation()">Clear Saved Data</button>
 </div>
-
 </section>
 
-
-<!-- =========================
-     HOW IT WORKS
-========================= -->
-
+<!-- HOW -->
 <section id="how" class="card">
-
 <h2>📚 How It Works</h2>
 
-<div class="tip">
-<strong>1. Enter your selling price.</strong><br>
-Add the price you want to charge your customer.
-</div>
+<p><strong>1. Enter your selling price.</strong><br>
+Add the price you want to charge your customer.</p>
 
-<div class="tip">
-<strong>2. Add product and shipping costs.</strong><br>
-These are your main costs per order.
-</div>
+<p><strong>2. Add product and shipping costs.</strong><br>
+These are your main costs per order.</p>
 
-<div class="tip">
-<strong>3. Add marketplace and payment fees.</strong><br>
-Enter the fee percentages that apply to your sale.
-</div>
+<p><strong>3. Add marketplace and payment fees.</strong><br>
+Enter the fee percentages that apply to your sale.</p>
 
-<div class="tip">
-<strong>4. Add advertising and discounts.</strong><br>
-These can reduce your final profit.
-</div>
+<p><strong>4. Add advertising and discounts.</strong><br>
+These can reduce your final profit.</p>
 
-<div class="tip">
-<strong>5. Calculate your profit.</strong><br>
-The calculator shows profit, margin and break-even.
-</div>
+<p><strong>5. Calculate your profit.</strong><br>
+The calculator shows profit, margin, break-even and recommended pricing.</p>
 
-<div class="tip">
-<strong>6. Track actual business results.</strong><br>
-Use the Step 30 Business Tracker to record real revenue and expenses.
-</div>
-
+<p><strong>6. Track actual business results.</strong><br>
+Use the Step 30 Business Tracker to record real revenue and expenses.</p>
 </section>
 
-
-<!-- =========================
-     FAQ
-========================= -->
-
+<!-- FAQ -->
 <section id="faq" class="card">
-
 <h2>❓ FAQ</h2>
 
 <details>
 <summary>What is POD?</summary>
-<p>
-Print-on-Demand is a business model where products are produced after an order is placed.
-</p>
+<p>Print-on-Demand (POD) is a business model where products are produced after an order is received.</p>
 </details>
 
 <details>
 <summary>What is profit per order?</summary>
-<p>
-It is the estimated amount remaining after the entered costs and fees are deducted.
-</p>
+<p>Profit per order is the amount left after deducting product, shipping, platform, payment and advertising costs from the sale.</p>
 </details>
 
 <details>
 <summary>What is break-even price?</summary>
-<p>
-It is the approximate price at which the entered costs and fees are covered.
-</p>
+<p>It is the approximate selling price at which your calculated profit becomes zero.</p>
 </details>
 
 <details>
 <summary>Does currency selection convert money?</summary>
-<p>
-No. Currency selection changes the displayed symbol only.
-</p>
+<p>No. Currency selection changes the displayed symbol only. It does not perform currency conversion.</p>
 </details>
 
 <details>
 <summary>Are marketplace fees exact?</summary>
-<p>
-No. Marketplace presets are estimates. Actual fees can vary.
-</p>
+<p>No. Marketplace fees can change. Enter the percentages that apply to your situation.</p>
 </details>
 
 <details>
 <summary>What is the Business Tracker?</summary>
-<p>
-The Business Tracker lets you enter your actual revenue, orders and expenses to calculate real business net profit and margin.
-</p>
+<p>The Business Tracker lets you enter actual monthly revenue and expenses separately from calculator estimates.</p>
 </details>
 
 </section>
 
-
-<!-- =========================
-     ABOUT
-========================= -->
-
+<!-- ABOUT -->
 <section class="card">
-
 <h2>ℹ️ About PODProfit India</h2>
-
 <p>
-PODProfit India is a browser-based tool for POD sellers to understand pricing, costs, profit, goals, forecasts and business performance.
+PODProfit India is a browser-based tool for POD sellers to understand pricing,
+costs, profit, goals, forecasts and business performance.
 </p>
-
 </section>
 
-
 <section class="card">
-
 <h2>🔒 Privacy</h2>
-
 <p>
-Basic calculations do not require an account. Calculator and tracker data saved using the Save buttons is stored locally in your browser.
+Basic calculations do not require an account. Calculator and tracker data saved
+using the Save buttons is stored locally in your browser.
 </p>
-
 </section>
 
-
 <section class="card">
-
 <h2>⚠️ Disclaimer</h2>
-
 <p>
-All calculations are estimates based on the information entered by the user. Actual marketplace fees, taxes, shipping, payment charges and advertising costs can vary.
+All calculations are estimates based on the information entered by the user.
+Actual marketplace fees, taxes, shipping, payment charges and advertising costs
+can vary.
 </p>
-
 </section>
 
-
 <section class="card">
-
 <h2>📩 Contact</h2>
-
 <p>
 For questions or suggestions, add your preferred email or contact details here.
 </p>
-
 </section>
 
 </main>
 
-
 <footer>
-
+<p>© 2026 PODProfit India. All rights reserved.</p>
 <p>
-© 2026 PODProfit India. All rights reserved.
-</p>
-
-<p style="margin-top:8px;">
 <a href="#calculator">Calculator</a> |
 <a href="#dashboard">Dashboard</a> |
 <a href="#tracker">Tracker</a> |
-<a href="#goal">Goal Planner</a> |
+<a href="#goals">Goal Planner</a> |
 <a href="#faq">FAQ</a>
 </p>
-
 </footer>
-
 
 <script>
 
-/* =====================================
-   GLOBAL
-===================================== */
-
-let currentData = {};
+/* =========================================================
+   PODPROFIT INDIA - STEP 30
+   Calculator + Dashboard + Business Tracker + Goals
+   ========================================================= */
 
 const productDefaults = {
   "T-Shirt":250,
@@ -1971,39 +1334,48 @@ const productDefaults = {
   "Sticker":50
 };
 
-const marketplaceFees = {
-  "Custom":10,
-  "Etsy":10,
-  "Shopify":3,
-  "Amazon":15,
-  "Other":10
+let calc = {
+  profit:0,
+  margin:0,
+  totalCost:0,
+  monthlySales:0,
+  monthlyProfit:0,
+  breakEven:0,
+  targetPrice:0,
+  recommendedPrice:0,
+  recommendedProfit:0,
+  ordersNeeded:0,
+  platformCost:0,
+  paymentCost:0,
+  netRevenue:0,
+  fixedCost:0
 };
 
-
-/* =====================================
-   HELPERS
-===================================== */
-
-function el(id){
-  return document.getElementById(id);
-}
-
 function num(id){
-  return parseFloat(el(id).value) || 0;
+  return Number(document.getElementById(id).value) || 0;
 }
 
 function money(value){
-  const symbol = el("currency").value;
+  const symbol = document.getElementById("currency").value;
   return symbol + Number(value || 0).toFixed(2);
 }
 
-function profitHealth(profit,margin){
+function money0(value){
+  const symbol = document.getElementById("currency").value;
+  return symbol + Number(value || 0).toFixed(0);
+}
+
+function percent(value){
+  return Number(value || 0).toFixed(1) + "%";
+}
+
+function health(profit, margin){
 
   if(profit < 0){
     return "🔴 Loss";
   }
 
-  if(profit === 0){
+  if(Math.abs(profit) < 0.000001){
     return "⚪ Break-even";
   }
 
@@ -2018,675 +1390,638 @@ function profitHealth(profit,margin){
   return "🔵 Strong Profit";
 }
 
+function priceCalculation(price, discount, ads){
 
-function calculateAtPrice(
-  price,
-  productCost,
-  shipping,
-  platformFee,
-  paymentFee,
-  discount,
-  ads
-){
+  const product = num("productCost");
+  const shipping = num("shippingCost");
+  const pf = num("platformFee") / 100;
+  const pay = num("paymentFee") / 100;
 
-  price = Number(price) || 0;
+  const afterDiscount = price * (1 - discount / 100);
 
-  const discountRate =
-    Math.max(0,Number(discount)||0) / 100;
-
-  const afterDiscount =
-    price * (1-discountRate);
-
-  const platformCost =
-    afterDiscount *
-    (Number(platformFee)||0) / 100;
-
-  const paymentCost =
-    afterDiscount *
-    (Number(paymentFee)||0) / 100;
+  const platformCost = afterDiscount * pf;
+  const paymentCost = afterDiscount * pay;
 
   const netRevenue =
-    afterDiscount -
-    platformCost -
-    paymentCost;
+    afterDiscount - platformCost - paymentCost;
+
+  const fixed =
+    product + shipping + ads;
 
   const totalCost =
-    (Number(productCost)||0) +
-    (Number(shipping)||0) +
+    product +
+    shipping +
+    ads +
     platformCost +
-    paymentCost +
-    (Number(ads)||0);
+    paymentCost;
 
   const profit =
-    netRevenue -
-    (Number(productCost)||0) -
-    (Number(shipping)||0) -
-    (Number(ads)||0);
+    netRevenue - fixed;
 
   const margin =
-    netRevenue > 0
-    ? profit / netRevenue * 100
-    : 0;
+    netRevenue > 0 ? (profit / netRevenue) * 100 : 0;
 
   return {
-    price,
-    afterDiscount,
+    profit,
+    margin,
+    totalCost,
     platformCost,
     paymentCost,
     netRevenue,
-    totalCost,
-    profit,
-    margin
+    fixed
   };
 }
 
-
-/* =====================================
-   MAIN CALCULATOR
-===================================== */
-
 function calculate(){
 
-  const product = el("productType").value;
   const price = num("sellingPrice");
-  const productCost = num("productCost");
-  const shipping = num("shippingCost");
-  const platformFee = num("platformFee");
-  const paymentFee = num("paymentFee");
   const discount = num("discount");
-  const ads = num("adCost");
-  const monthlyOrders = num("monthlyOrders");
+  const ads = num("adsCost");
+  const orders = num("monthlyOrders");
+
   const targetProfit = num("targetProfit");
   const targetMargin = num("targetMargin");
   const targetIncome = num("targetIncome");
 
-  const result =
-    calculateAtPrice(
-      price,
-      productCost,
-      shipping,
-      platformFee,
-      paymentFee,
-      discount,
-      ads
-    );
+  const current = priceCalculation(price,discount,ads);
 
-  const fixedCost =
-    productCost +
-    shipping +
-    ads;
+  calc.profit = current.profit;
+  calc.margin = current.margin;
+  calc.totalCost = current.totalCost;
+  calc.monthlySales = price * orders;
+  calc.monthlyProfit = current.profit * orders;
+  calc.platformCost = current.platformCost;
+  calc.paymentCost = current.paymentCost;
+  calc.netRevenue = current.netRevenue;
+  calc.fixedCost = current.fixed;
 
-  const discountRate =
-    discount / 100;
-
+  const discountRate = 1 - discount / 100;
   const feeRate =
-    (platformFee + paymentFee) / 100;
+    1 -
+    (num("platformFee") + num("paymentFee")) / 100;
 
   const denominator =
-    (1-discountRate) *
-    (1-feeRate);
+    discountRate * feeRate;
 
-  const breakEven =
+  calc.breakEven =
     denominator > 0
-    ? fixedCost / denominator
-    : 0;
+      ? current.fixed / denominator
+      : 0;
 
-  const targetPrice =
+  calc.targetPrice =
     denominator > 0
-    ? (fixedCost+targetProfit)/denominator
-    : 0;
+      ? (current.fixed + targetProfit) / denominator
+      : 0;
 
-  const marginRate =
-    targetMargin/100;
+  const marginDecimal = targetMargin / 100;
 
-  const recommendedPrice =
-    denominator > 0 &&
-    marginRate < 1
-    ? fixedCost /
-      (
-        (1-marginRate) *
-        denominator
-      )
-    : 0;
+  calc.recommendedPrice =
+    denominator > 0 && marginDecimal < 1
+      ? current.fixed /
+        ((1 - marginDecimal) * denominator)
+      : 0;
 
-  const recommendedResult =
-    calculateAtPrice(
-      recommendedPrice,
-      productCost,
-      shipping,
-      platformFee,
-      paymentFee,
+  calc.recommendedProfit =
+    priceCalculation(
+      calc.recommendedPrice,
       discount,
       ads
-    );
+    ).profit;
 
-  const monthlySales =
-    price * monthlyOrders;
+  calc.ordersNeeded =
+    calc.profit > 0
+      ? Math.ceil(targetIncome / calc.profit)
+      : 0;
 
-  const monthlyProfit =
-    result.profit * monthlyOrders;
+  /* Results */
 
-  const ordersNeeded =
-    result.profit > 0
-    ? Math.ceil(targetIncome/result.profit)
-    : 0;
+  document.getElementById("profitOrder").textContent =
+    money(calc.profit);
 
-  currentData = {
+  document.getElementById("profitMargin").textContent =
+    percent(calc.margin);
 
-    product,
-    price,
-    productCost,
-    shipping,
-    platformFee,
-    paymentFee,
-    discount,
-    ads,
-    monthlyOrders,
+  document.getElementById("totalCost").textContent =
+    money(calc.totalCost);
 
-    targetProfit,
-    targetMargin,
-    targetIncome,
+  document.getElementById("monthlySales").textContent =
+    money(calc.monthlySales);
 
-    profit:result.profit,
-    margin:result.margin,
-    totalCost:result.totalCost,
+  document.getElementById("monthlyProfit").textContent =
+    money(calc.monthlyProfit);
 
-    monthlySales,
-    monthlyProfit,
+  document.getElementById("breakEven").textContent =
+    money(calc.breakEven);
 
-    breakEven,
-    targetPrice,
+  document.getElementById("targetPrice").textContent =
+    money(calc.targetPrice);
 
-    recommendedPrice,
-    recommendedProfit:
-      recommendedResult.profit,
+  document.getElementById("recommendedPrice").textContent =
+    money(calc.recommendedPrice);
 
-    ordersNeeded
+  document.getElementById("recommendedProfit").textContent =
+    money(calc.recommendedProfit);
 
-  };
+  document.getElementById("ordersNeeded").textContent =
+    calc.ordersNeeded;
 
+  const h = health(calc.profit,calc.margin);
 
-  /* RESULTS */
+  document.getElementById("profitHealth").textContent =
+    "Profit Health: " + h +
+    " • Margin: " + percent(calc.margin);
 
-  el("profitResult").textContent =
-    money(result.profit);
+  let suggestionPrice =
+    calc.targetPrice > calc.recommendedPrice
+      ? calc.targetPrice
+      : calc.recommendedPrice;
 
-  el("marginResult").textContent =
-    result.margin.toFixed(2)+"%";
+  document.getElementById("pricingSuggestion").textContent =
+    "Automatic Pricing Suggestion: Consider testing around " +
+    money0(Math.ceil(suggestionPrice)) +
+    " because it supports your target profit / margin.";
 
-  el("totalCostResult").textContent =
-    money(result.totalCost);
-
-  el("monthlySalesResult").textContent =
-    money(monthlySales);
-
-  el("monthlyProfitResult").textContent =
-    money(monthlyProfit);
-
-  el("breakEvenResult").textContent =
-    money(breakEven);
-
-  el("targetPriceResult").textContent =
-    money(targetPrice);
-
-  el("recommendedPriceResult").textContent =
-    money(recommendedPrice);
-
-  el("recommendedProfitResult").textContent =
-    money(recommendedResult.profit);
-
-  el("ordersNeededResult").textContent =
-    ordersNeeded;
-
-
-  const health =
-    profitHealth(
-      result.profit,
-      result.margin
-    );
-
-  el("profitHealth").textContent =
-    "Profit Health: "+
-    health+
-    " • Margin: "+
-    result.margin.toFixed(2)+
-    "%";
-
-
-  if(targetPrice > recommendedPrice){
-
-    el("pricingSuggestion").textContent =
-      "Consider testing around "+
-      money(Math.ceil(targetPrice))+
-      " because it reaches your target profit per order.";
-
-  }else{
-
-    el("pricingSuggestion").textContent =
-      "Consider testing around "+
-      money(Math.ceil(recommendedPrice))+
-      " based on your target profit margin.";
-
-  }
-
-
-  /* DASHBOARD */
-
-  el("dashboardSales").textContent =
-    money(monthlySales);
-
-  el("dashboardProfit").textContent =
-    money(monthlyProfit);
-
-  el("dashboardOrders").textContent =
-    monthlyOrders;
-
-  el("dashboardProduct").textContent =
-    product;
-
-  el("dashboardBestPrice").textContent =
-    money(recommendedPrice);
-
-
-  const goalProgress =
-    targetIncome > 0
-    ? Math.min(
-        100,
-        Math.max(
-          0,
-          monthlyProfit/targetIncome*100
-        )
-      )
-    : 0;
-
-  el("dashboardGoal").textContent =
-    goalProgress.toFixed(1)+"%";
-
-  el("goalProgressBar").style.width =
-    goalProgress+"%";
-
-  el("goalProgressText").textContent =
-    goalProgress.toFixed(1)+"% of monthly goal";
-
-  el("dashboardHealth").textContent =
-    "Profit Health: "+
-    health+
-    " • Current monthly profit: "+
-    money(monthlyProfit);
-
-
-  /* BUSINESS SUMMARY */
-
-  el("dailyRevenue").textContent =
-    money(monthlySales/30);
-
-  el("dailyProfit").textContent =
-    money(monthlyProfit/30);
-
-  el("monthlyRevenue").textContent =
-    money(monthlySales);
-
-  el("monthlyNetProfit").textContent =
-    money(monthlyProfit);
-
-  el("yearlyRevenue").textContent =
-    money(monthlySales*12);
-
-  el("yearlyNetProfit").textContent =
-    money(monthlyProfit*12);
-
-
-  /* MONTHLY EXPENSES */
-
-  const monthlyProduct =
-    productCost*monthlyOrders;
-
-  const monthlyShipping =
-    shipping*monthlyOrders;
-
-  const monthlyPlatform =
-    result.platformCost*monthlyOrders;
-
-  const monthlyPayment =
-    result.paymentCost*monthlyOrders;
-
-  const monthlyAds =
-    ads*monthlyOrders;
-
-  const totalExpenses =
-    monthlyProduct+
-    monthlyShipping+
-    monthlyPlatform+
-    monthlyPayment+
-    monthlyAds;
-
-  el("expenseProduct").textContent =
-    money(monthlyProduct);
-
-  el("expenseShipping").textContent =
-    money(monthlyShipping);
-
-  el("expensePlatform").textContent =
-    money(monthlyPlatform);
-
-  el("expensePayment").textContent =
-    money(monthlyPayment);
-
-  el("expenseAds").textContent =
-    money(monthlyAds);
-
-  el("expenseTotal").textContent =
-    money(totalExpenses);
-
-
-  /* YEAR */
-
-  el("annualOrders").textContent =
-    monthlyOrders*12;
-
-  el("annualRevenue").textContent =
-    money(monthlySales*12);
-
-  el("annualExpenses").textContent =
-    money(totalExpenses*12);
-
-  el("annualProfit").textContent =
-    money(monthlyProfit*12);
-
-
-  syncGoalPlanner();
-
-  updatePriceComparison();
-
+  updateDashboard();
+  updateBusinessSummary();
+  updateExpenses();
+  updateGoals();
+  updateComparison();
   updateProductComparison();
-
-  syncScenarioOne();
-
-  updateScenarios();
-
+  updateSimulator();
   updateAnalyzer();
-
-  updateProfitLadder();
-
+  updateLadder();
   updateForecast();
+  updateTips();
 
-  updateSmartTips();
-
+  /* Keep Scenario 1 synced */
+  document.getElementById("s1price").value = price;
+  document.getElementById("s1discount").value = discount;
+  document.getElementById("s1ads").value = ads;
+  document.getElementById("s1orders").value = orders;
 }
 
+/* Product defaults */
 
-/* =====================================
-   PRODUCT
-===================================== */
+document.getElementById("productType").addEventListener("change",function(){
 
-el("productType").addEventListener(
-  "change",
-  function(){
+  const product = this.value;
 
-    const product =
-      this.value;
+  document.getElementById("productCost").value =
+    productDefaults[product];
 
-    if(productDefaults[product] !== undefined){
-
-      el("productCost").value =
-        productDefaults[product];
-
-    }
-
-    calculate();
-
-  }
-);
-
-
-/* =====================================
-   MARKETPLACE
-===================================== */
-
-el("marketplace").addEventListener(
-  "change",
-  function(){
-
-    const marketplace =
-      this.value;
-
-    if(
-      marketplaceFees[marketplace] !== undefined
-    ){
-
-      el("platformFee").value =
-        marketplaceFees[marketplace];
-
-    }
-
-    calculate();
-
-  }
-);
-
-
-/* =====================================
-   LIVE CALCULATION
-===================================== */
-
-[
- "currency",
- "sellingPrice",
- "productCost",
- "shippingCost",
- "platformFee",
- "paymentFee",
- "discount",
- "adCost",
- "monthlyOrders",
- "targetProfit",
- "targetMargin",
- "targetIncome"
-].forEach(function(id){
-
-  el(id).addEventListener(
-    "input",
-    calculate
-  );
-
-  el(id).addEventListener(
-    "change",
-    calculate
-  );
-
+  calculate();
 });
 
+/* Platform presets */
 
-/* =====================================
-   GOAL PLANNER
-===================================== */
+document.getElementById("platform").addEventListener("change",function(){
 
-function applyGoalPreset(){
+  const p = this.value;
 
-  const preset =
-    el("goalPreset").value;
+  if(p === "Etsy - Estimated"){
+    document.getElementById("platformFee").value = 10;
+  }
+  else if(p === "Shopify / Own Store - Estimated"){
+    document.getElementById("platformFee").value = 3;
+  }
+  else if(p === "Amazon - Estimated"){
+    document.getElementById("platformFee").value = 15;
+  }
+  else{
+    document.getElementById("platformFee").value = 10;
+  }
 
-  if(preset === "custom"){
+  calculate();
+});
+
+/* Dashboard */
+
+function updateDashboard(){
+
+  document.getElementById("dashboardSales").textContent =
+    money(calc.monthlySales);
+
+  document.getElementById("dashboardProfit").textContent =
+    money(calc.monthlyProfit);
+
+  document.getElementById("dashboardOrders").textContent =
+    num("monthlyOrders");
+
+  document.getElementById("dashboardProduct").textContent =
+    document.getElementById("productType").value;
+
+  document.getElementById("dashboardBestPrice").textContent =
+    money(calc.recommendedPrice);
+
+  const goal = num("targetIncome");
+
+  const progress =
+    goal > 0
+      ? Math.max(0,Math.min(100,
+        calc.monthlyProfit / goal * 100
+      ))
+      : 0;
+
+  document.getElementById("dashboardGoal").textContent =
+    progress.toFixed(1) + "%";
+
+  document.getElementById("dashboardHealth").textContent =
+    "Profit Health: " +
+    health(calc.profit,calc.margin) +
+    " • Current monthly profit: " +
+    money(calc.monthlyProfit);
+
+  document.getElementById("dashboardGoalText").textContent =
+    progress.toFixed(1) + "% of monthly goal";
+
+  document.getElementById("dashboardProgress").style.width =
+    progress + "%";
+}
+
+/* Business summary */
+
+function updateBusinessSummary(){
+
+  document.getElementById("dailyRevenue").textContent =
+    money(calc.monthlySales / 30);
+
+  document.getElementById("dailyProfit").textContent =
+    money(calc.monthlyProfit / 30);
+
+  document.getElementById("summaryMonthlyRevenue").textContent =
+    money(calc.monthlySales);
+
+  document.getElementById("summaryMonthlyProfit").textContent =
+    money(calc.monthlyProfit);
+
+  document.getElementById("yearlyRevenue").textContent =
+    money(calc.monthlySales * 12);
+
+  document.getElementById("yearlyProfit").textContent =
+    money(calc.monthlyProfit * 12);
+}
+
+/* Expense breakdown */
+
+function updateExpenses(){
+
+  const orders = num("monthlyOrders");
+
+  const product =
+    num("productCost") * orders;
+
+  const shipping =
+    num("shippingCost") * orders;
+
+  const platform =
+    calc.platformCost * orders;
+
+  const payment =
+    calc.paymentCost * orders;
+
+  const ads =
+    num("adsCost") * orders;
+
+  const total =
+    product +
+    shipping +
+    platform +
+    payment +
+    ads;
+
+  document.getElementById("expenseTable").innerHTML = `
+    <tr><td>Product Cost</td><td>${money(product)}</td></tr>
+    <tr><td>Shipping</td><td>${money(shipping)}</td></tr>
+    <tr><td>Platform Fees</td><td>${money(platform)}</td></tr>
+    <tr><td>Payment Fees</td><td>${money(payment)}</td></tr>
+    <tr><td>Advertising</td><td>${money(ads)}</td></tr>
+    <tr><th>Total Expenses</th><th>${money(total)}</th></tr>
+  `;
+}
+
+/* =========================
+   STEP 30 TRACKER
+   ========================= */
+
+function calculateTracker(){
+
+  const revenue = num("trackerRevenue");
+  const orders = num("trackerOrders");
+
+  const product = num("trackerProduct");
+  const shipping = num("trackerShipping");
+  const platform = num("trackerPlatform");
+  const payment = num("trackerPayment");
+  const ads = num("trackerAds");
+  const other = num("trackerOther");
+
+  const totalExpenses =
+    product +
+    shipping +
+    platform +
+    payment +
+    ads +
+    other;
+
+  const netProfit =
+    revenue - totalExpenses;
+
+  const margin =
+    revenue > 0
+      ? netProfit / revenue * 100
+      : 0;
+
+  const revenueOrder =
+    orders > 0
+      ? revenue / orders
+      : 0;
+
+  const profitOrder =
+    orders > 0
+      ? netProfit / orders
+      : 0;
+
+  const expenseOrder =
+    orders > 0
+      ? totalExpenses / orders
+      : 0;
+
+  document.getElementById("trackerTotalRevenue").textContent =
+    money(revenue);
+
+  document.getElementById("trackerTotalExpenses").textContent =
+    money(totalExpenses);
+
+  document.getElementById("trackerNetProfit").textContent =
+    money(netProfit);
+
+  document.getElementById("trackerMargin").textContent =
+    percent(margin);
+
+  document.getElementById("trackerResultOrders").textContent =
+    orders;
+
+  document.getElementById("trackerRevenueOrder").textContent =
+    money(revenueOrder);
+
+  document.getElementById("trackerProfitOrder").textContent =
+    money(profitOrder);
+
+  document.getElementById("trackerExpenseOrder").textContent =
+    money(expenseOrder);
+
+  const expenses = [
+    ["Product Cost",product],
+    ["Shipping",shipping],
+    ["Platform Fees",platform],
+    ["Payment Fees",payment],
+    ["Advertising",ads],
+    ["Other Expenses",other]
+  ];
+
+  let html = "";
+
+  expenses.forEach(function(item){
+
+    const pct =
+      revenue > 0
+        ? item[1] / revenue * 100
+        : 0;
+
+    html += `
+      <tr>
+        <td>${item[0]}</td>
+        <td>${money(item[1])}</td>
+        <td>${pct.toFixed(1)}%</td>
+      </tr>
+    `;
+  });
+
+  html += `
+    <tr>
+      <th>Total</th>
+      <th>${money(totalExpenses)}</th>
+      <th>${revenue > 0 ? (totalExpenses/revenue*100).toFixed(1) : "0.0"}%</th>
+    </tr>
+  `;
+
+  document.getElementById("trackerExpenseTable").innerHTML = html;
+}
+
+function saveTracker(){
+
+  const data = {
+    month:document.getElementById("trackerMonth").value,
+    revenue:num("trackerRevenue"),
+    orders:num("trackerOrders"),
+    product:num("trackerProduct"),
+    shipping:num("trackerShipping"),
+    platform:num("trackerPlatform"),
+    payment:num("trackerPayment"),
+    ads:num("trackerAds"),
+    other:num("trackerOther")
+  };
+
+  localStorage.setItem(
+    "podprofit_tracker_step30",
+    JSON.stringify(data)
+  );
+
+  alert("Tracker saved successfully.");
+}
+
+function loadTracker(){
+
+  const saved =
+    localStorage.getItem("podprofit_tracker_step30");
+
+  if(!saved){
+    alert("No saved tracker data found.");
     return;
   }
 
-  el("goalAmount").value =
-    preset;
+  const d = JSON.parse(saved);
 
-  el("targetIncome").value =
-    preset;
+  document.getElementById("trackerMonth").value =
+    d.month || "";
 
-  calculate();
+  document.getElementById("trackerRevenue").value =
+    d.revenue || 0;
 
+  document.getElementById("trackerOrders").value =
+    d.orders || 0;
+
+  document.getElementById("trackerProduct").value =
+    d.product || 0;
+
+  document.getElementById("trackerShipping").value =
+    d.shipping || 0;
+
+  document.getElementById("trackerPlatform").value =
+    d.platform || 0;
+
+  document.getElementById("trackerPayment").value =
+    d.payment || 0;
+
+  document.getElementById("trackerAds").value =
+    d.ads || 0;
+
+  document.getElementById("trackerOther").value =
+    d.other || 0;
+
+  calculateTracker();
 }
 
+function clearTracker(){
 
-function customGoalChange(){
-
-  const value =
-    num("goalAmount");
-
-  el("targetIncome").value =
-    value;
-
-  const presets =
-    ["5000","10000","20000","50000"];
-
-  if(
-    presets.includes(String(value))
-  ){
-
-    el("goalPreset").value =
-      String(value);
-
-  }else{
-
-    el("goalPreset").value =
-      "custom";
-
+  if(!confirm("Clear saved tracker data?")){
+    return;
   }
 
-  calculate();
+  localStorage.removeItem(
+    "podprofit_tracker_step30"
+  );
 
+  document.getElementById("trackerRevenue").value = 0;
+  document.getElementById("trackerOrders").value = 0;
+  document.getElementById("trackerProduct").value = 0;
+  document.getElementById("trackerShipping").value = 0;
+  document.getElementById("trackerPlatform").value = 0;
+  document.getElementById("trackerPayment").value = 0;
+  document.getElementById("trackerAds").value = 0;
+  document.getElementById("trackerOther").value = 0;
+
+  calculateTracker();
 }
 
+/* GOALS */
 
-function syncGoalPlanner(){
+function changeGoalPreset(){
 
-  const current =
-    currentData.monthlyProfit || 0;
+  const value =
+    document.getElementById("goalPreset").value;
+
+  if(value !== "custom"){
+    document.getElementById("goalAmount").value =
+      value;
+  }
+
+  calculateGoal();
+}
+
+function updateGoals(){
 
   const goal =
     num("goalAmount");
+
+  /* Keep planner synced with main target only
+     when user has not entered another goal. */
+
+  if(!document.getElementById("goalAmount").dataset.manual){
+    document.getElementById("goalAmount").value =
+      num("targetIncome");
+  }
+
+  calculateGoal();
+}
+
+document.getElementById("goalAmount").addEventListener(
+  "input",
+  function(){
+    this.dataset.manual = "1";
+  }
+);
+
+function calculateGoal(){
+
+  const goal = num("goalAmount");
+
+  const current = calc.monthlyProfit;
+  const orders = num("monthlyOrders");
 
   const remaining =
     Math.max(0,goal-current);
 
   const progress =
     goal > 0
-    ? Math.min(
-        100,
-        Math.max(
-          0,
-          current/goal*100
-        )
-      )
-    : 0;
+      ? Math.max(0,Math.min(100,current/goal*100))
+      : 0;
 
-  const currentOrders =
-    currentData.monthlyOrders || 0;
+  const ordersNeeded =
+    calc.profit > 0
+      ? Math.ceil(goal/calc.profit)
+      : 0;
 
-  const profitPerOrder =
-    currentData.profit || 0;
-
-  let ordersNeeded = 0;
-
-  if(
-    profitPerOrder > 0 &&
-    goal > current
-  ){
-
-    ordersNeeded =
-      Math.ceil(
-        goal/profitPerOrder
-      );
-
-  }
-
-  const extraOrders =
-    Math.max(
-      0,
-      ordersNeeded-currentOrders
-    );
+  const extra =
+    Math.max(0,ordersNeeded-orders);
 
   const requiredProfit =
-    currentOrders > 0
-    ? goal/currentOrders
-    : 0;
+    orders > 0
+      ? goal/orders
+      : 0;
 
-
-  el("plannerCurrent").textContent =
+  document.getElementById("goalCurrent").textContent =
     money(current);
 
-  el("plannerGoal").textContent =
+  document.getElementById("goalValue").textContent =
     money(goal);
 
-  el("plannerRemaining").textContent =
+  document.getElementById("goalRemaining").textContent =
     money(remaining);
 
-  el("plannerProgress").textContent =
-    progress.toFixed(1)+"%";
+  document.getElementById("goalProgress").textContent =
+    progress.toFixed(1) + "%";
 
-  el("plannerProgressBar").style.width =
-    progress+"%";
+  document.getElementById("goalOrders").textContent =
+    orders;
 
-  el("plannerCurrentOrders").textContent =
-    currentOrders;
-
-  el("plannerOrdersNeeded").textContent =
+  document.getElementById("goalOrdersNeeded").textContent =
     ordersNeeded;
 
-  el("plannerExtraOrders").textContent =
-    extraOrders;
+  document.getElementById("goalExtraOrders").textContent =
+    extra;
 
-  el("plannerRequiredProfit").textContent =
+  document.getElementById("goalRequiredProfit").textContent =
     money(requiredProfit);
 
-  el("plannerTableGoal").textContent =
+  document.getElementById("goalTableGoal").textContent =
     money(goal);
 
-  el("plannerTableCurrent").textContent =
+  document.getElementById("goalTableCurrent").textContent =
     money(current);
 
-  el("plannerTableRemaining").textContent =
+  document.getElementById("goalTableRemaining").textContent =
     money(remaining);
 
-  el("plannerTableProgress").textContent =
-    progress.toFixed(1)+"%";
+  document.getElementById("goalTableProgress").textContent =
+    progress.toFixed(1) + "%";
 
-  el("plannerTableExtra").textContent =
-    extraOrders;
+  document.getElementById("goalTableExtra").textContent =
+    extra;
 
+  /* Keep preset synchronized */
 
-  const presets =
-    ["5000","10000","20000","50000"];
+  const preset =
+    document.getElementById("goalPreset");
 
-  if(
-    presets.includes(String(goal))
-  ){
+  const presets = ["5000","10000","20000","50000"];
 
-    el("goalPreset").value =
-      String(goal);
-
-  }else{
-
-    el("goalPreset").value =
-      "custom";
-
+  if(presets.includes(String(goal))){
+    preset.value = String(goal);
   }
-
+  else{
+    preset.value = "custom";
+  }
 }
 
+/* PRICE COMPARISON */
 
-/* =====================================
-   PRICE COMPARISON
-===================================== */
+function updateComparison(){
 
-function updatePriceComparison(){
-
-  if(!currentData.productCost){
-    return;
-  }
-
-  const prices = [
-
-    num("price1"),
-    num("price2"),
-    num("price3"),
-    num("price4"),
-    num("price5")
-
-  ];
+  const prices =
+    Array.from(
+      document.querySelectorAll(".testPrice")
+    ).map(x => Number(x.value) || 0);
 
   let bestPrice = 0;
   let bestProfit = -Infinity;
@@ -2695,295 +2030,204 @@ function updatePriceComparison(){
   prices.forEach(function(price){
 
     const r =
-      calculateAtPrice(
+      priceCalculation(
         price,
-        currentData.productCost,
-        currentData.shipping,
-        currentData.platformFee,
-        currentData.paymentFee,
-        currentData.discount,
-        currentData.ads
+        num("discount"),
+        num("adsCost")
       );
 
     if(r.profit > bestProfit){
-
-      bestProfit =
-        r.profit;
-
-      bestPrice =
-        price;
-
+      bestProfit = r.profit;
+      bestPrice = price;
     }
 
     html += `
       <tr>
         <td>${money(price)}</td>
         <td>${money(r.profit)}</td>
-        <td>${r.margin.toFixed(1)}%</td>
-        <td>${profitHealth(r.profit,r.margin)}</td>
+        <td>${percent(r.margin)}</td>
+        <td>${health(r.profit,r.margin)}</td>
       </tr>
     `;
-
   });
 
-  el("priceComparisonBody").innerHTML =
+  document.getElementById("priceComparisonTable").innerHTML =
     html;
 
-  el("bestTestPrice").textContent =
+  document.getElementById("bestTestPrice").textContent =
     money(bestPrice);
 
-  el("bestTestProfit").textContent =
-    money(bestProfit);
-
+  document.getElementById("bestTestProfit").textContent =
+    money(bestProfit === -Infinity ? 0 : bestProfit);
 }
 
+document.querySelectorAll(".testPrice").forEach(function(input){
+  input.addEventListener("input",updateComparison);
+});
 
-/* =====================================
-   PRODUCT COMPARISON
-===================================== */
+/* PRODUCT COMPARISON */
 
 function updateProductComparison(){
 
-  if(!currentData.productCost){
-    return;
-  }
-
   const products = [
-
     ["T-Shirt",250],
     ["Hoodie",450],
     ["Mug",180],
     ["Cap",220],
     ["Sticker",50]
-
   ];
 
   let html = "";
 
-  products.forEach(function(item){
+  const original =
+    document.getElementById("productCost").value;
+
+  products.forEach(function(p){
+
+    document.getElementById("productCost").value =
+      p[1];
 
     const r =
-      calculateAtPrice(
-        currentData.price,
-        item[1],
-        currentData.shipping,
-        currentData.platformFee,
-        currentData.paymentFee,
-        currentData.discount,
-        currentData.ads
+      priceCalculation(
+        num("sellingPrice"),
+        num("discount"),
+        num("adsCost")
       );
 
     html += `
       <tr>
-        <td>${item[0]}</td>
-        <td>${money(item[1])}</td>
+        <td>${p[0]}</td>
+        <td>${money(p[1])}</td>
         <td>${money(r.profit)}</td>
-        <td>${r.margin.toFixed(1)}%</td>
+        <td>${percent(r.margin)}</td>
       </tr>
     `;
-
   });
 
-  el("productComparisonBody").innerHTML =
+  document.getElementById("productCost").value =
+    original;
+
+  document.getElementById("productComparisonTable").innerHTML =
     html;
-
 }
 
+/* SIMULATOR */
 
-/* =====================================
-   SCENARIOS
-===================================== */
+function scenario(priceId,discountId,adsId,ordersId){
 
-function syncScenarioOne(){
-
-  el("s1Price").value =
-    currentData.price;
-
-  el("s1Discount").value =
-    currentData.discount;
-
-  el("s1Ads").value =
-    currentData.ads;
-
-  el("s1Orders").value =
-    currentData.monthlyOrders;
-
+  return priceCalculation(
+    num(priceId),
+    num(discountId),
+    num(adsId)
+  );
 }
 
-
-function updateScenarios(){
-
-  if(!currentData.productCost){
-    return;
-  }
+function updateSimulator(){
 
   const scenarios = [
-
-    {
-      id:1,
-      price:currentData.price,
-      discount:currentData.discount,
-      ads:currentData.ads,
-      orders:currentData.monthlyOrders
-    },
-
-    {
-      id:2,
-      price:num("s2Price"),
-      discount:num("s2Discount"),
-      ads:num("s2Ads"),
-      orders:num("s2Orders")
-    },
-
-    {
-      id:3,
-      price:num("s3Price"),
-      discount:num("s3Discount"),
-      ads:num("s3Ads"),
-      orders:num("s3Orders")
-    },
-
-    {
-      id:4,
-      price:num("s4Price"),
-      discount:num("s4Discount"),
-      ads:num("s4Ads"),
-      orders:num("s4Orders")
-    }
-
+    [1,"s1price","s1discount","s1ads","s1orders"],
+    [2,"s2price","s2discount","s2ads","s2orders"],
+    [3,"s3price","s3discount","s3ads","s3orders"],
+    [4,"s4price","s4discount","s4ads","s4orders"]
   ];
 
-  const baseMonthly =
-    currentData.profit *
-    currentData.monthlyOrders;
+  let baseMonthly = 0;
 
-  scenarios.forEach(function(s){
+  scenarios.forEach(function(s,index){
 
     const r =
-      calculateAtPrice(
-        s.price,
-        currentData.productCost,
-        currentData.shipping,
-        currentData.platformFee,
-        currentData.paymentFee,
-        s.discount,
-        s.ads
+      scenario(
+        s[1],
+        s[2],
+        s[3],
+        s[4]
       );
 
     const monthly =
-      r.profit*s.orders;
+      r.profit * num(s[4]);
 
-    const change =
-      monthly-baseMonthly;
+    if(index === 0){
+      baseMonthly = monthly;
+    }
 
-    el("s"+s.id+"Profit").textContent =
+    document.getElementById(
+      "s" + s[0] + "profit"
+    ).textContent =
       money(r.profit);
 
-    el("s"+s.id+"Monthly").textContent =
+    document.getElementById(
+      "s" + s[0] + "monthly"
+    ).textContent =
       money(monthly);
 
-    el("s"+s.id+"Change").textContent =
-      money(change);
+    if(index > 0){
 
+      document.getElementById(
+        "s" + s[0] + "change"
+      ).textContent =
+        money(monthly-baseMonthly);
+    }
   });
-
 }
 
-
-/* =====================================
-   BREAK EVEN
-===================================== */
-
-function requiredPriceForProfit(profit){
-
-  const fixed =
-    currentData.productCost+
-    currentData.shipping+
-    currentData.ads;
-
-  const denominator =
-    (1-currentData.discount/100)*
-    (
-      1-
-      (
-        currentData.platformFee+
-        currentData.paymentFee
-      )/100
-    );
-
-  if(denominator<=0){
-    return 0;
-  }
-
-  return (
-    fixed+profit
-  )/denominator;
-
-}
-
+/* Analyzer */
 
 function updateAnalyzer(){
 
-  const fixed =
-    currentData.productCost+
-    currentData.shipping+
-    currentData.ads;
+  document.getElementById("fixedCost").textContent =
+    money(calc.fixedCost);
 
-  const r =
-    calculateAtPrice(
-      currentData.price,
-      currentData.productCost,
-      currentData.shipping,
-      currentData.platformFee,
-      currentData.paymentFee,
-      currentData.discount,
-      currentData.ads
-    );
+  document.getElementById("platformCostOrder").textContent =
+    money(calc.platformCost);
 
-  el("fixedCostAnalyzer").textContent =
-    money(fixed);
+  document.getElementById("paymentCostOrder").textContent =
+    money(calc.paymentCost);
 
-  el("platformAnalyzer").textContent =
-    money(r.platformCost);
+  document.getElementById("analyzerTotal").textContent =
+    money(calc.totalCost);
 
-  el("paymentAnalyzer").textContent =
-    money(r.paymentCost);
+  document.getElementById("netRevenue").textContent =
+    money(calc.netRevenue);
 
-  el("totalExpenseAnalyzer").textContent =
-    money(r.totalCost);
+  document.getElementById("analyzerProfit").textContent =
+    money(calc.profit);
 
-  el("netRevenueAnalyzer").textContent =
-    money(r.netRevenue);
+  document.getElementById("belowBE").textContent =
+    "Below " + money(calc.breakEven);
 
-  el("currentProfitAnalyzer").textContent =
-    money(r.profit);
+  document.getElementById("atBE").textContent =
+    money(calc.breakEven);
 
-  el("belowBreakEven").textContent =
-    "Below "+money(currentData.breakEven);
+  document.getElementById("aboveBE").textContent =
+    "Above " + money(calc.breakEven);
 
-  el("breakEvenAnalyzer").textContent =
-    money(currentData.breakEven);
+  document.getElementById("plus100").textContent =
+    money(calc.targetPriceFor100 || requiredPrice(100));
 
-  el("aboveBreakEven").textContent =
-    "Above "+money(currentData.breakEven);
+  document.getElementById("plus200").textContent =
+    money(requiredPrice(200));
 
-  el("profit100Price").textContent =
-    money(requiredPriceForProfit(100));
-
-  el("profit200Price").textContent =
-    money(requiredPriceForProfit(200));
-
-  el("profit300Price").textContent =
-    money(requiredPriceForProfit(300));
-
+  document.getElementById("plus300").textContent =
+    money(requiredPrice(300));
 }
 
+function requiredPrice(profitTarget){
 
-/* =====================================
-   PROFIT LADDER
-===================================== */
+  const discount =
+    num("discount");
 
-function updateProfitLadder(){
+  const denominator =
+    (1-discount/100) *
+    (1-(num("platformFee")+num("paymentFee"))/100);
+
+  return denominator > 0
+    ? (calc.fixedCost + profitTarget) / denominator
+    : 0;
+}
+
+/* Ladder */
+
+function updateLadder(){
 
   const targets =
     [50,100,150,200,250,300,500];
@@ -2993,19 +2237,25 @@ function updateProfitLadder(){
   targets.forEach(function(target){
 
     const price =
-      requiredPriceForProfit(target);
+      requiredPrice(target);
 
     const extra =
-      price-currentData.price;
+      price-num("sellingPrice");
 
     const orders5 =
-      Math.ceil(5000/target);
+      target > 0
+        ? Math.ceil(5000/target)
+        : 0;
 
     const orders10 =
-      Math.ceil(10000/target);
+      target > 0
+        ? Math.ceil(10000/target)
+        : 0;
 
     const orders20 =
-      Math.ceil(20000/target);
+      target > 0
+        ? Math.ceil(20000/target)
+        : 0;
 
     html += `
       <tr>
@@ -3017,955 +2267,375 @@ function updateProfitLadder(){
         <td>${orders20}</td>
       </tr>
     `;
-
   });
 
-  el("profitLadderBody").innerHTML =
+  document.getElementById("ladderTable").innerHTML =
     html;
-
 }
 
-
-/* =====================================
-   FORECAST
-===================================== */
+/* Forecast */
 
 function updateForecast(){
 
   const monthlyOrders =
-    currentData.monthlyOrders || 0;
+    num("monthlyOrders");
 
   const price =
-    currentData.price || 0;
+    num("sellingPrice");
 
-  const profit =
-    currentData.profit || 0;
+  const monthlyRevenue =
+    calc.monthlySales;
 
-  const cost =
-    currentData.totalCost || 0;
+  const monthlyProfit =
+    calc.monthlyProfit;
 
+  const monthlyExpenses =
+    monthlyRevenue-monthlyProfit;
 
-  el("forecastOrders").textContent =
+  document.getElementById("forecastOrders").textContent =
     monthlyOrders;
 
-  el("forecastProfitOrder").textContent =
-    money(profit);
+  document.getElementById("forecastProfitOrder").textContent =
+    money(calc.profit);
 
-  el("forecastRevenue").textContent =
-    money(price*monthlyOrders);
+  document.getElementById("forecastRevenue").textContent =
+    money(monthlyRevenue);
 
-  el("forecastMonthlyProfit").textContent =
-    money(profit*monthlyOrders);
-
+  document.getElementById("forecastMonthlyProfit").textContent =
+    money(monthlyProfit);
 
   const periods = [
-
     ["7 Days",monthlyOrders/30*7],
-
     ["30 Days",monthlyOrders],
-
     ["90 Days",monthlyOrders*3],
-
     ["6 Months",monthlyOrders*6],
-
     ["12 Months",monthlyOrders*12]
-
   ];
 
   let html = "";
 
-  periods.forEach(function(item){
+  periods.forEach(function(p){
 
-    const orders =
-      item[1];
+    const orders = p[1];
 
     const revenue =
       price*orders;
 
     const expenses =
-      cost*orders;
+      monthlyExpenses *
+      (orders/monthlyOrders || 0);
 
-    const netProfit =
-      profit*orders;
+    const profit =
+      calc.profit*orders;
 
     html += `
       <tr>
-        <td>${item[0]}</td>
+        <td>${p[0]}</td>
         <td>${Math.round(orders)}</td>
         <td>${money(revenue)}</td>
         <td>${money(expenses)}</td>
-        <td>${money(netProfit)}</td>
+        <td>${money(profit)}</td>
       </tr>
     `;
-
   });
 
-  el("forecastTable").innerHTML =
+  document.getElementById("forecastTable").innerHTML =
     html;
 
-
-  const scenarios = [
-
+  const salesScenarios = [
     ["Conservative",.75],
-
     ["Current Pace",1],
-
     ["Higher Sales",1.25]
-
   ];
 
-  let scenarioHTML = "";
+  let scenarioHtml = "";
 
-  scenarios.forEach(function(s){
+  salesScenarios.forEach(function(s){
 
     const orders =
-      Math.ceil(
-        monthlyOrders*s[1]
-      );
+      Math.round(monthlyOrders*s[1]);
 
     const revenue =
       price*orders;
 
-    const netProfit =
-      profit*orders;
+    const profit =
+      calc.profit*orders;
 
-    scenarioHTML += `
+    scenarioHtml += `
       <tr>
         <td>${s[0]}</td>
         <td>${orders}</td>
         <td>${money(revenue)}</td>
-        <td>${money(netProfit)}</td>
+        <td>${money(profit)}</td>
       </tr>
     `;
-
   });
 
-  el("salesScenarioBody").innerHTML =
-    scenarioHTML;
-
+  document.getElementById("salesScenarioTable").innerHTML =
+    scenarioHtml;
 }
 
+/* Tips */
 
-/* =====================================
-   SMART TIPS
-===================================== */
+function updateTips(){
 
-function updateSmartTips(){
+  const h =
+    health(calc.profit,calc.margin);
 
-  const tips = [];
+  let tips = [];
 
-  if(currentData.profit<0){
-
-    tips.push(
-      "🔴 Your current selling price produces a loss. Review product, shipping, fees or advertising costs."
-    );
-
-  }else if(currentData.margin<10){
-
-    tips.push(
-      "🟠 Your current profit margin is below 10%. Consider testing pricing or reducing costs."
-    );
-
-  }else if(currentData.margin>=30){
-
-    tips.push(
-      "🔵 Your current margin is 30% or higher based on the entered numbers."
-    );
-
-  }else{
-
-    tips.push(
-      "🟢 Your current calculation is profitable. Continue testing different prices."
-    );
-
+  if(calc.profit < 0){
+    tips.push("🔴 Your current selling price is producing a loss based on the entered numbers.");
+  }
+  else if(calc.margin < 10){
+    tips.push("🟠 Your current margin is low. Review costs, fees and pricing.");
+  }
+  else if(calc.margin < 30){
+    tips.push("🟢 Your current calculation shows a positive margin.");
+  }
+  else{
+    tips.push("🔵 Your current margin is 30% or higher based on the entered numbers.");
   }
 
-  if(
-    currentData.price<
-    currentData.breakEven
-  ){
-
+  if(calc.profit > 0){
     tips.push(
-      "⚠️ Your selling price is below the calculated break-even price."
+      "🎯 Your current profit per order would require approximately " +
+      Math.ceil(num("targetIncome")/calc.profit) +
+      " orders to reach the target income."
     );
-
-  }
-
-  if(
-    currentData.price<
-    currentData.recommendedPrice
-  ){
-
-    tips.push(
-      "💡 Your current price is below the target-margin recommended price."
-    );
-
-  }
-
-  if(
-    currentData.ordersNeeded>
-    currentData.monthlyOrders
-  ){
-
-    tips.push(
-      "🎯 You may need more orders or a higher profit per order to reach your target income."
-    );
-
   }
 
   tips.push(
-    "📒 Use the Business Tracker to compare your actual business results with calculator estimates."
+    "📊 Use Price Comparison and Scenario Simulator before changing your actual store price."
   );
 
   tips.push(
-    "📊 Use Price Comparison and Scenario Simulator before changing your store price."
+    "📒 Use the Step 30 Business Tracker to record actual revenue and expenses."
   );
 
-  let html = "";
-
-  tips.forEach(function(tip){
-
-    html += `
-      <div class="tip">
-        ${tip}
-      </div>
-    `;
-
-  });
-
-  el("smartTips").innerHTML =
-    html;
-
+  document.getElementById("smartTips").innerHTML =
+    tips.map(x => "<p>"+x+"</p>").join("");
 }
 
-
-/* =====================================
-   STEP 30 BUSINESS TRACKER
-===================================== */
-
-function calculateTracker(){
-
-  const revenue =
-    num("trackerRevenue");
-
-  const orders =
-    num("trackerOrders");
-
-  const product =
-    num("trackerProductCost");
-
-  const shipping =
-    num("trackerShipping");
-
-  const platform =
-    num("trackerPlatform");
-
-  const payment =
-    num("trackerPayment");
-
-  const ads =
-    num("trackerAds");
-
-  const other =
-    num("trackerOther");
-
-
-  const totalExpenses =
-    product+
-    shipping+
-    platform+
-    payment+
-    ads+
-    other;
-
-  const netProfit =
-    revenue-totalExpenses;
-
-  const margin =
-    revenue>0
-    ? netProfit/revenue*100
-    : 0;
-
-
-  el("trackerTotalRevenue").textContent =
-    money(revenue);
-
-  el("trackerTotalExpenses").textContent =
-    money(totalExpenses);
-
-  el("trackerProfitCard").textContent =
-    money(netProfit);
-
-  el("trackerNetProfit").textContent =
-    money(netProfit);
-
-  el("trackerMargin").textContent =
-    margin.toFixed(2)+"%";
-
-  el("trackerOrderCard").textContent =
-    orders;
-
-
-  const revenuePerOrder =
-    orders>0
-    ? revenue/orders
-    : 0;
-
-  const profitPerOrder =
-    orders>0
-    ? netProfit/orders
-    : 0;
-
-  const expensePerOrder =
-    orders>0
-    ? totalExpenses/orders
-    : 0;
-
-
-  el("trackerRevenueOrder").textContent =
-    money(revenuePerOrder);
-
-  el("trackerProfitOrder").textContent =
-    money(profitPerOrder);
-
-  el("trackerExpenseOrder").textContent =
-    money(expensePerOrder);
-
-
-  el("trackerProductOutput").textContent =
-    money(product);
-
-  el("trackerShippingOutput").textContent =
-    money(shipping);
-
-  el("trackerPlatformOutput").textContent =
-    money(platform);
-
-  el("trackerPaymentOutput").textContent =
-    money(payment);
-
-  el("trackerAdsOutput").textContent =
-    money(ads);
-
-  el("trackerOtherOutput").textContent =
-    money(other);
-
-  el("trackerExpenseTotalOutput").textContent =
-    money(totalExpenses);
-
-
-  function percent(value){
-
-    return revenue>0
-      ? (value/revenue*100).toFixed(1)+"%"
-      : "0%";
-
-  }
-
-
-  el("trackerProductPercent").textContent =
-    percent(product);
-
-  el("trackerShippingPercent").textContent =
-    percent(shipping);
-
-  el("trackerPlatformPercent").textContent =
-    percent(platform);
-
-  el("trackerPaymentPercent").textContent =
-    percent(payment);
-
-  el("trackerAdsPercent").textContent =
-    percent(ads);
-
-  el("trackerOtherPercent").textContent =
-    percent(other);
-
-  el("trackerExpensePercent").textContent =
-    percent(totalExpenses);
-
-
-  if(revenue===0 && totalExpenses===0){
-
-    el("trackerStatus").textContent =
-      "Enter your actual business numbers.";
-
-  }else if(netProfit<0){
-
-    el("trackerStatus").textContent =
-      "🔴 Actual business result: Loss";
-
-  }else if(netProfit===0){
-
-    el("trackerStatus").textContent =
-      "⚪ Actual business result: Break-even";
-
-  }else{
-
-    el("trackerStatus").textContent =
-      "🟢 Actual business result: Profit • Margin "+
-      margin.toFixed(2)+"%";
-
-  }
-
-}
-
-
-/* =====================================
-   TRACKER SAVE
-===================================== */
-
-function saveTracker(){
-
-  const data = {
-
-    month:el("trackerMonth").value,
-
-    revenue:el("trackerRevenue").value,
-
-    orders:el("trackerOrders").value,
-
-    product:el("trackerProductCost").value,
-
-    shipping:el("trackerShipping").value,
-
-    platform:el("trackerPlatform").value,
-
-    payment:el("trackerPayment").value,
-
-    ads:el("trackerAds").value,
-
-    other:el("trackerOther").value
-
-  };
-
-
-  localStorage.setItem(
-    "podprofitStep30Tracker",
-    JSON.stringify(data)
-  );
-
-  alert(
-    "Step 30 tracker saved successfully!"
-  );
-
-}
-
-
-function loadTracker(){
-
-  const saved =
-    localStorage.getItem(
-      "podprofitStep30Tracker"
-    );
-
-  if(!saved){
-
-    alert(
-      "No saved tracker data found."
-    );
-
-    return;
-
-  }
-
-
-  try{
-
-    const data =
-      JSON.parse(saved);
-
-    if(data.month !== undefined)
-      el("trackerMonth").value =
-        data.month;
-
-    if(data.revenue !== undefined)
-      el("trackerRevenue").value =
-        data.revenue;
-
-    if(data.orders !== undefined)
-      el("trackerOrders").value =
-        data.orders;
-
-    if(data.product !== undefined)
-      el("trackerProductCost").value =
-        data.product;
-
-    if(data.shipping !== undefined)
-      el("trackerShipping").value =
-        data.shipping;
-
-    if(data.platform !== undefined)
-      el("trackerPlatform").value =
-        data.platform;
-
-    if(data.payment !== undefined)
-      el("trackerPayment").value =
-        data.payment;
-
-    if(data.ads !== undefined)
-      el("trackerAds").value =
-        data.ads;
-
-    if(data.other !== undefined)
-      el("trackerOther").value =
-        data.other;
-
-
-    calculateTracker();
-
-    alert(
-      "Tracker loaded successfully!"
-    );
-
-  }catch(error){
-
-    alert(
-      "Tracker data could not be loaded."
-    );
-
-  }
-
-}
-
-
-function clearTracker(){
-
-  localStorage.removeItem(
-    "podprofitStep30Tracker"
-  );
-
-  el("trackerRevenue").value =
-    0;
-
-  el("trackerOrders").value =
-    0;
-
-  el("trackerProductCost").value =
-    0;
-
-  el("trackerShipping").value =
-    0;
-
-  el("trackerPlatform").value =
-    0;
-
-  el("trackerPayment").value =
-    0;
-
-  el("trackerAds").value =
-    0;
-
-  el("trackerOther").value =
-    0;
-
-  calculateTracker();
-
-  alert(
-    "Tracker data cleared."
-  );
-
-}
-
-
-/* =====================================
-   TRACKER LIVE UPDATE
-===================================== */
-
-[
- "trackerRevenue",
- "trackerOrders",
- "trackerProductCost",
- "trackerShipping",
- "trackerPlatform",
- "trackerPayment",
- "trackerAds",
- "trackerOther"
-].forEach(function(id){
-
-  el(id).addEventListener(
-    "input",
-    calculateTracker
-  );
-
-});
-
-
-/* =====================================
-   SAVE CALCULATOR
-===================================== */
-
-function getResultText(){
-
-  return `
-PODProfit India
-
-Product: ${currentData.product}
-Selling Price: ${money(currentData.price)}
-
-Profit / Order: ${money(currentData.profit)}
-Profit Margin: ${currentData.margin.toFixed(2)}%
-
-Total Cost / Order: ${money(currentData.totalCost)}
-
-Monthly Sales: ${money(currentData.monthlySales)}
-Monthly Profit: ${money(currentData.monthlyProfit)}
-
-Break-even Price: ${money(currentData.breakEven)}
-
-Target Profit Price:
-${money(currentData.targetPrice)}
-
-Recommended Price:
-${money(currentData.recommendedPrice)}
-
-Expected Profit @ Recommended:
-${money(currentData.recommendedProfit)}
-
-Orders Needed:
-${currentData.ordersNeeded}
-
-Profit Health:
-${profitHealth(
-  currentData.profit,
-  currentData.margin
-)}
-`;
-
-}
-
-
-function copyResult(){
-
-  const text =
-    getResultText();
-
-  if(
-    navigator.clipboard &&
-    navigator.clipboard.writeText
-  ){
-
-    navigator.clipboard.writeText(text)
-      .then(function(){
-
-        alert(
-          "Result copied!"
-        );
-
-      })
-      .catch(function(){
-
-        fallbackCopy(text);
-
-      });
-
-  }else{
-
-    fallbackCopy(text);
-
-  }
-
-}
-
-
-function fallbackCopy(text){
-
-  const area =
-    document.createElement("textarea");
-
-  area.value =
-    text;
-
-  document.body.appendChild(area);
-
-  area.select();
-
-  document.execCommand("copy");
-
-  document.body.removeChild(area);
-
-  alert(
-    "Result copied!"
-  );
-
-}
-
-
-function shareResult(){
-
-  const text =
-    getResultText();
-
-  if(navigator.share){
-
-    navigator.share({
-      title:"PODProfit India",
-      text:text
-    }).catch(function(){});
-
-  }else{
-
-    copyResult();
-
-  }
-
-}
-
-
-/* =====================================
-   CALCULATOR SAVE / LOAD
-===================================== */
+/* Save calculator */
 
 function saveCalculation(){
 
   const ids = [
-
     "currency",
     "productType",
-    "marketplace",
+    "platform",
     "sellingPrice",
     "productCost",
     "shippingCost",
     "platformFee",
     "paymentFee",
     "discount",
-    "adCost",
+    "adsCost",
     "monthlyOrders",
     "targetProfit",
     "targetMargin",
     "targetIncome",
-
-    "goalPreset",
-    "goalAmount",
-
-    "price1",
-    "price2",
-    "price3",
-    "price4",
-    "price5",
-
-    "s2Price",
-    "s2Discount",
-    "s2Ads",
-    "s2Orders",
-
-    "s3Price",
-    "s3Discount",
-    "s3Ads",
-    "s3Orders",
-
-    "s4Price",
-    "s4Discount",
-    "s4Ads",
-    "s4Orders"
-
+    "goalAmount"
   ];
 
   const data = {};
 
   ids.forEach(function(id){
-
     data[id] =
-      el(id).value;
-
+      document.getElementById(id).value;
   });
 
+  data.testPrices =
+    Array.from(
+      document.querySelectorAll(".testPrice")
+    ).map(x=>x.value);
 
   localStorage.setItem(
-    "podprofitIndiaStep30",
+    "podprofit_calculation_step30",
     JSON.stringify(data)
   );
 
-  alert(
-    "Calculation saved successfully!"
-  );
-
+  alert("Calculation saved successfully.");
 }
-
 
 function loadCalculation(){
 
   const saved =
     localStorage.getItem(
-      "podprofitIndiaStep30"
+      "podprofit_calculation_step30"
     );
 
   if(!saved){
-
-    alert(
-      "No saved calculation found."
-    );
-
+    alert("No saved calculation found.");
     return;
-
   }
 
+  const data =
+    JSON.parse(saved);
 
-  try{
+  Object.keys(data).forEach(function(id){
 
-    const data =
-      JSON.parse(saved);
+    const el =
+      document.getElementById(id);
 
-    Object.keys(data).forEach(function(id){
+    if(el){
+      el.value = data[id];
+    }
+  });
 
-      if(el(id)){
+  if(data.testPrices){
 
-        el(id).value =
-          data[id];
-
-      }
-
-    });
-
-    calculate();
-
-    alert(
-      "Calculation loaded successfully!"
-    );
-
-  }catch(error){
-
-    alert(
-      "Saved data could not be loaded."
-    );
-
+    document.querySelectorAll(".testPrice")
+      .forEach(function(el,index){
+        if(data.testPrices[index] !== undefined){
+          el.value = data.testPrices[index];
+        }
+      });
   }
 
+  calculate();
 }
 
+function clearCalculation(){
 
-function clearSavedCalculation(){
+  if(!confirm("Clear saved calculator data?")){
+    return;
+  }
 
   localStorage.removeItem(
-    "podprofitIndiaStep30"
+    "podprofit_calculation_step30"
   );
 
-  alert(
-    "Saved calculator data cleared."
-  );
-
+  alert("Saved calculator data cleared.");
 }
 
+/* Copy */
 
-/* =====================================
-   RESET
-===================================== */
+function copyResult(){
+
+  const text =
+`PODProfit India
+
+Product: ${document.getElementById("productType").value}
+Selling Price: ${money(num("sellingPrice"))}
+Profit / Order: ${money(calc.profit)}
+Profit Margin: ${percent(calc.margin)}
+Monthly Sales: ${money(calc.monthlySales)}
+Monthly Profit: ${money(calc.monthlyProfit)}
+Break-even Price: ${money(calc.breakEven)}
+Target Profit Price: ${money(calc.targetPrice)}
+Recommended Price: ${money(calc.recommendedPrice)}
+Orders Needed: ${calc.ordersNeeded}
+Profit Health: ${health(calc.profit,calc.margin)}`;
+
+  navigator.clipboard.writeText(text)
+    .then(()=>alert("Result copied."));
+}
+
+/* Share */
+
+function shareResult(){
+
+  const text =
+`PODProfit India
+Profit / Order: ${money(calc.profit)}
+Margin: ${percent(calc.margin)}
+Monthly Profit: ${money(calc.monthlyProfit)}
+Recommended Price: ${money(calc.recommendedPrice)}`;
+
+  if(navigator.share){
+
+    navigator.share({
+      title:"PODProfit India",
+      text:text
+    });
+
+  }else{
+
+    navigator.clipboard.writeText(text)
+      .then(()=>alert("Share text copied."));
+  }
+}
+
+/* Reset */
 
 function resetCalculator(){
 
-  el("currency").value =
-    "₹";
+  document.getElementById("currency").value = "₹";
+  document.getElementById("productType").value = "T-Shirt";
+  document.getElementById("platform").value = "Custom";
 
-  el("productType").value =
-    "T-Shirt";
+  document.getElementById("sellingPrice").value = 599;
+  document.getElementById("productCost").value = 250;
+  document.getElementById("shippingCost").value = 60;
+  document.getElementById("platformFee").value = 10;
+  document.getElementById("paymentFee").value = 3;
+  document.getElementById("discount").value = 0;
+  document.getElementById("adsCost").value = 0;
+  document.getElementById("monthlyOrders").value = 30;
+  document.getElementById("targetProfit").value = 300;
+  document.getElementById("targetMargin").value = 30;
+  document.getElementById("targetIncome").value = 20000;
 
-  el("marketplace").value =
-    "Custom";
-
-  el("sellingPrice").value =
-    "599";
-
-  el("productCost").value =
-    "250";
-
-  el("shippingCost").value =
-    "60";
-
-  el("platformFee").value =
-    "10";
-
-  el("paymentFee").value =
-    "3";
-
-  el("discount").value =
-    "0";
-
-  el("adCost").value =
-    "0";
-
-  el("monthlyOrders").value =
-    "30";
-
-  el("targetProfit").value =
-    "300";
-
-  el("targetMargin").value =
-    "30";
-
-  el("targetIncome").value =
-    "20000";
-
-  el("goalAmount").value =
-    "20000";
-
-  el("goalPreset").value =
-    "20000";
+  document.getElementById("goalAmount").value = 20000;
+  document.getElementById("goalAmount").dataset.manual = "";
 
   calculate();
-
 }
 
+/* Auto calculation */
 
-/* =====================================
-   INITIAL LOAD
-===================================== */
+const calculatorInputs = [
+  "currency",
+  "sellingPrice",
+  "productCost",
+  "shippingCost",
+  "platformFee",
+  "paymentFee",
+  "discount",
+  "adsCost",
+  "monthlyOrders",
+  "targetProfit",
+  "targetMargin",
+  "targetIncome"
+];
 
-window.addEventListener(
-  "load",
-  function(){
+calculatorInputs.forEach(function(id){
 
-    /* Goal sync */
-
-    el("goalAmount").value =
-      el("targetIncome").value;
-
-    const goal =
-      num("goalAmount");
-
-    const presets =
-      ["5000","10000","20000","50000"];
-
-    if(
-      presets.includes(String(goal))
-    ){
-
-      el("goalPreset").value =
-        String(goal);
-
-    }else{
-
-      el("goalPreset").value =
-        "custom";
-
+  document.getElementById(id).addEventListener(
+    "input",
+    function(){
+      calculate();
     }
+  );
 
-
-    /* Current month */
-
-    if(!el("trackerMonth").value){
-
-      const now =
-        new Date();
-
-      const month =
-        now.getFullYear()+
-        "-" +
-        String(
-          now.getMonth()+1
-        ).padStart(2,"0");
-
-      el("trackerMonth").value =
-        month;
-
+  document.getElementById(id).addEventListener(
+    "change",
+    function(){
+      calculate();
     }
+  );
+});
 
+/* Simulator live updates */
 
-    calculate();
+[
+  "s2price","s2discount","s2ads","s2orders",
+  "s3price","s3discount","s3ads","s3orders",
+  "s4price","s4discount","s4ads","s4orders"
+].forEach(function(id){
 
-    calculateTracker();
+  document.getElementById(id).addEventListener(
+    "input",
+    updateSimulator
+  );
+});
 
-  }
-);
+/* Initial calculation */
+
+calculate();
+calculateTracker();
 
 </script>
 
